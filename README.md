@@ -85,9 +85,35 @@ ANVAY/
 4. Connect an Android device or start an emulator.
 5. Build and run the application.
 
-## 📸 Screenshots
+## 📱 Screenshots
 
-Screenshots of the application will be added here as development progresses.
+### 🚀 Startup Screen
+
+![ANVAY Startup](screenshots/Anvay_Startup_Page.jpeg)
+
+### 🔐 Login
+
+![ANVAY Login](screenshots/Anvay_Login_Page.jpeg)
+
+### 🏠 Home Dashboard
+
+![ANVAY Home](screenshots/Anvay_Home_Page.jpeg)
+
+### 📚 Building Directory
+
+![ANVAY Building Directory](screenshots/Anvay_Building_Directory.jpeg)
+
+### 🚨 Emergency Guidance
+
+![ANVAY Emergency Guidance](screenshots/Anvay_Emergency_Guidance.jpeg)
+
+### 🔔 Alerts & Notices
+
+![ANVAY Alerts](screenshots/Anvay_Alert_&_Notice.jpeg)
+
+### 👤 Profile
+
+![ANVAY Profile](screenshots/Anvay_Profile_Page.jpeg)
 
 ## 🔮 Future Scope
 
