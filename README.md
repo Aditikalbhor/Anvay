@@ -1,6 +1,21 @@
-# ANVAY — Smart Building Navigation & Emergency Guidance System
+# ANVAY — Smart Indoor Navigation & Emergency Guidance System
 
-ANVAY is a smart indoor navigation and emergency guidance system designed for navigating complex educational buildings.
+ANVAY is an Android-based smart indoor navigation and emergency guidance system designed to help users navigate complex educational buildings efficiently and safely.
+
+## 📌 Overview
+
+Finding classrooms, laboratories, offices, and other facilities inside a large educational building can be difficult, especially for new students, visitors, and staff. ANVAY provides a centralized mobile application for discovering locations, navigating between floors, accessing building information, receiving alerts, and obtaining emergency guidance.
+
+## 🎯 Objective
+
+The objective of ANVAY is to provide a simple and accessible mobile solution for:
+
+- Finding rooms and facilities inside the building
+- Navigating between different floors and locations
+- Providing building and location information
+- Guiding users during emergency situations
+- Delivering important building alerts and notices
+- Supporting efficient access to campus facilities
 
 ## 🚀 Features
 
