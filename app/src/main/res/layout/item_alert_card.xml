@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardBackgroundColor="@color/surface"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/divider"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp">
+
+        <!-- Priority / Category Badge -->
+        <TextView
+            android:id="@+id/tvAlertPriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_badge_rounded"
+            android:backgroundTint="@color/emergency_container"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="Urgent"
+            android:textColor="@color/emergency_red"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAlertCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_badge_rounded"
+            android:backgroundTint="@color/surface_variant"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:text="Maintenance"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAlertPriority"
+            app:layout_constraintStart_toEndOf="@+id/tvAlertPriority"
+            app:layout_constraintTop_toTopOf="@+id/tvAlertPriority" />
+
+        <!-- Timestamp -->
+        <TextView
+            android:id="@+id/tvAlertTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_time"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/text_muted"
+            android:text="15 mins ago"
+            android:textColor="@color/text_muted"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAlertPriority"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAlertPriority" />
+
+        <!-- Alert Title -->
+        <TextView
+            android:id="@+id/tvAlertTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Corridor Tile Repair: 2nd Floor East Wing"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/tvAlertPriority" />
+
+        <!-- Alert Message -->
+        <TextView
+            android:id="@+id/tvAlertMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:lineSpacingMultiplier="1.2"
+            android:text="Floor maintenance in progress near Room IT-201. Please use Staircase B for reaching 2nd and 3rd floors safely."
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvAlertTitle" />
+
+        <!-- Affected Area Tag -->
+        <TextView
+            android:id="@+id/tvLocationAffected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_location_pin"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/primary"
+            android:text="Affected: 2nd Floor East Corridor"
+            android:textColor="@color/primary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAlertMessage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

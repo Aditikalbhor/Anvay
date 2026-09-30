@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ANVAY</string>
+    <string name="app_tagline">Smart Indoor Navigation &amp; Emergency Guidance</string>
+    <string name="college_name">Government Polytechnic Pune</string>
+    <string name="building_name">Computer &amp; IT Engineering Building</string>
+
+    <!-- Navigation Bar -->
+    <string name="nav_home">Home</string>
+    <string name="nav_directory">Directory</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_alerts">Alerts</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Home Dashboard -->
+    <string name="welcome_greeting">Welcome to GPP Campus</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="btn_indoor_navigation">Indoor Navigation</string>
+    <string name="btn_indoor_navigation_desc">Find real-time turn-by-turn routes</string>
+    <string name="btn_floor_maps">Floor Maps</string>
+    <string name="btn_floor_maps_desc">Explore 2D/3D building layouts</string>
+    <string name="btn_emergency_mode">Emergency Mode</string>
+    <string name="btn_emergency_mode_desc">Instant exit guidance &amp; safety contacts</string>
+    <string name="btn_building_directory">Building Directory</string>
+    <string name="btn_building_directory_desc">Browse labs, classrooms, staff cabins</string>
+    <string name="explore_categories">Explore Categories</string>
+    <string name="recent_searches">Recent Searches</string>
+    <string name="latest_announcements">Campus Announcements &amp; Alerts</string>
+    <string name="view_all">View All</string>
+    <string name="building_overview">Building Overview</string>
+    <string name="admin_portal">Admin Portal</string>
+
+    <!-- Categories -->
+    <string name="cat_all">All</string>
+    <string name="cat_classrooms">Classrooms</string>
+    <string name="cat_labs">Laboratories</string>
+    <string name="cat_staff">Staff Rooms</string>
+    <string name="cat_hod">HOD &amp; Offices</string>
+    <string name="cat_washrooms">Washrooms</string>
+    <string name="cat_server">Server Rooms</string>
+    <string name="cat_facilities">Facilities</string>
+
+    <!-- Floors -->
+    <string name="floor_all">All Floors</string>
+    <string name="floor_ground">Ground Floor</string>
+    <string name="floor_first">1st Floor</string>
+    <string name="floor_second">2nd Floor</string>
+    <string name="floor_third">3rd Floor</string>
+
+    <!-- Search Screen -->
+    <string name="search_hint">Search room no, lab, staff, facility…</string>
+    <string name="no_results_found">No locations found</string>
+    <string name="no_results_desc">Try searching by room number (e.g. C-101, IT-204) or facility name.</string>
+    <string name="clear_history">Clear History</string>
+
+    <!-- Location Detail -->
+    <string name="location_details">Location Details</string>
+    <string name="btn_navigate">Start Navigation</string>
+    <string name="btn_navigate_desc">Calculate optimal indoor path</string>
+    <string name="btn_share_location">Share Location</string>
+    <string name="btn_bookmark">Bookmark Location</string>
+    <string name="section_facilities">Available Facilities</string>
+    <string name="section_nearby">Nearby Landmarks &amp; Utilities</string>
+    <string name="section_info">Information &amp; In-Charge</string>
+    <string name="section_emergency_exit">Nearest Evacuation Exit</string>
+    <string name="operating_hours">Hours:</string>
+    <string name="in_charge">In-Charge:</string>
+    <string name="department">Department:</string>
+    <string name="floor_level">Floor Level:</string>
+    <string name="room_code">Room Code:</string>
+
+    <!-- Emergency Screen -->
+    <string name="emergency_guidance_title">EMERGENCY GUIDANCE</string>
+    <string name="emergency_banner_sub">Stay calm. Follow designated evacuation paths and instructions.</string>
+    <string name="btn_start_emergency_guidance">Start Emergency Guidance</string>
+    <string name="nearest_exit_title">Nearest Primary Exit</string>
+    <string name="nearest_exit_desc">Ground Floor Main Exit Gate &amp; Fire Staircase A</string>
+    <string name="emergency_contacts_title">One-Touch Emergency Hotlines</string>
+    <string name="safety_protocols_title">Safety &amp; Evacuation Protocols</string>
+    <string name="safety_equipment_title">Safety Equipment Locations</string>
+
+    <!-- Alerts Screen -->
+    <string name="alerts_and_notices">Alerts &amp; Notices</string>
+    <string name="filter_all">All</string>
+    <string name="filter_urgent">Urgent</string>
+    <string name="filter_maintenance">Maintenance</string>
+    <string name="filter_notices">Notices</string>
+    <string name="no_alerts">No active alerts at this time</string>
+
+    <!-- User Profile Screen -->
+    <string name="user_profile">User Profile</string>
+    <string name="settings">Settings</string>
+    <string name="role_student">Student</string>
+    <string name="role_faculty">Faculty</string>
+    <string name="role_staff">Staff Member</string>
+    <string name="role_visitor">Visitor / Guest</string>
+    <string name="switch_role">Switch User Persona</string>
+    <string name="app_settings">Application Settings</string>
+    <string name="notifications_pref">Push Notifications</string>
+    <string name="emergency_contacts_pref">My Emergency Contacts</string>
+    <string name="offline_cache_pref">Offline Map Cache</string>
+    <string name="high_contrast_pref">High Contrast Mode</string>
+    <string name="about_anvay">About ANVAY &amp; GPP</string>
+    <string name="admin_dashboard_title">Admin Management</string>
+
+    <!-- Admin Section -->
+    <string name="admin_overview">Admin Control Panel</string>
+    <string name="manage_rooms">Manage Rooms &amp; Labs</string>
+    <string name="manage_facilities">Manage Facilities</string>
+    <string name="manage_alerts">Manage Alerts &amp; Notices</string>
+    <string name="manage_routes">Manage Routes &amp; Nodes</string>
+    <string name="manage_emergency">Emergency Management</string>
+    <string name="add_new_room">Add New Room</string>
+    <string name="add_new_alert">Publish New Alert</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+
+    <!-- Placeholders -->
+    <string name="phase2_navigation_notice">Indoor Navigation, Floor Maps, and AR Route calculation will be enabled in Phase 2 after spatial survey and building layout calibration.</string>
+    <string name="understood">Understood</string>
+
+    <!-- Sign Up & Auth Strings -->
+    <string name="signup_title">Create Your Account</string>
+    <string name="signup_subtitle">Join ANVAY for a personalized campus experience</string>
+    <string name="signup_full_name">Full Name</string>
+    <string name="signup_id_hint">Student / Employee ID (e.g. GPP/CO/2024/099)</string>
+    <string name="signup_email_hint">Email Address (e.g. name@gppune.ac.in)</string>
+    <string name="signup_department_hint">Department</string>
+    <string name="signup_role_title">Select Role</string>
+    <string name="signup_password_hint">Password (min. 6 characters)</string>
+    <string name="signup_confirm_password_hint">Confirm Password</string>
+    <string name="signup_btn_create">CREATE ACCOUNT</string>
+    <string name="signup_already_have_account">Already have an account?</string>
+    <string name="signup_sign_in">Sign In</string>
+    <string name="login_dont_have_account">Don\'t have an account?</string>
+    <string name="login_sign_up">Sign Up</string>
+    <string name="signup_success">Account created successfully</string>
+</resources>

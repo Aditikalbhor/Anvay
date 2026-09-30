@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/ic_anvay_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_anvay_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ANVAY"
+        tools:targetApi="31">
+
+        <!-- Splash Screen (Launcher Entry Point) -->
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ANVAY">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Login Screen -->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Sign Up Screen -->
+        <activity
+            android:name=".ui.SignUpActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Main Dashboard Activity -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="false" />
+
+        <!-- Timetable & Schedules Screen -->
+        <activity
+            android:name=".ui.TimetableActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- Location Detail Screen -->
+        <activity
+            android:name=".ui.LocationDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <!-- Emergency Mode Screen -->
+        <activity
+            android:name=".ui.EmergencyActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/Theme.ANVAY.Emergency" />
+
+        <!-- Admin Dashboard -->
+        <activity
+            android:name=".ui.admin.AdminDashboardActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <!-- Manage Rooms -->
+        <activity
+            android:name=".ui.admin.ManageRoomsActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.AdminDashboardActivity" />
+
+        <!-- Manage Alerts -->
+        <activity
+            android:name=".ui.admin.ManageAlertsActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.AdminDashboardActivity" />
+
+        <!-- Manage Emergency -->
+        <activity
+            android:name=".ui.admin.ManageEmergencyActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.AdminDashboardActivity" />
+
+        <!-- Manage Routes -->
+        <activity
+            android:name=".ui.admin.ManageRoutesActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.admin.AdminDashboardActivity" />
+
+    </application>
+
+</manifest>

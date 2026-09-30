@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ANVAY Core Brand Palette (Navigation, Trust, Campus Technology) -->
+    <color name="primary">#1B3B6F</color>
+    <color name="primary_dark">#0B192C</color>
+    <color name="primary_light">#3B82F6</color>
+    <color name="primary_container">#E0EDFD</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_primary_container">#11294F</color>
+
+    <!-- Secondary / Tech Cyan Accent -->
+    <color name="secondary">#0891B2</color>
+    <color name="secondary_dark">#0E7490</color>
+    <color name="secondary_light">#38BDF8</color>
+    <color name="secondary_container">#E0F2FE</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="on_secondary_container">#0C4A6E</color>
+
+    <!-- Emergency & Safety Guidance (High Visibility Warning Treatment) -->
+    <color name="emergency_red">#DC2626</color>
+    <color name="emergency_red_dark">#991B1B</color>
+    <color name="emergency_red_light">#F87171</color>
+    <color name="emergency_container">#FEE2E2</color>
+    <color name="on_emergency">#FFFFFF</color>
+    <color name="emergency_border">#FCA5A5</color>
+
+    <!-- Status & Alerts -->
+    <color name="warning_amber">#D97706</color>
+    <color name="warning_container">#FEF3C7</color>
+    <color name="warning_text">#92400E</color>
+    <color name="success_green">#10B981</color>
+    <color name="success_container">#D1FAE5</color>
+    <color name="success_text">#065F46</color>
+    <color name="info_blue">#0284C7</color>
+    <color name="info_container">#E0F2FE</color>
+
+    <!-- Backgrounds & Surfaces -->
+    <color name="background">#F8FAFC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F1F5F9</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="divider">#E2E8F0</color>
+    <color name="border">#CBD5E1</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="text_on_dark">#FFFFFF</color>
+    <color name="text_on_dark_muted">#CBD5E1</color>
+
+    <!-- Category Badges -->
+    <color name="badge_lab_bg">#EDE9FE</color>
+    <color name="badge_lab_text">#6D28D9</color>
+    <color name="badge_class_bg">#DBEAFE</color>
+    <color name="badge_class_text">#1E40AF</color>
+    <color name="badge_staff_bg">#FEF3C7</color>
+    <color name="badge_staff_text">#B45309</color>
+    <color name="badge_facility_bg">#DCFCE7</color>
+    <color name="badge_facility_text">#15803D</color>
+    <color name="badge_emergency_bg">#FEE2E2</color>
+    <color name="badge_emergency_text">#B91C1C</color>
+    <color name="badge_guest_bg">#FEF9C3</color>
+    <color name="badge_guest_text">#854D0E</color>
+</resources>
