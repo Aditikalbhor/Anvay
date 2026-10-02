@@ -80,10 +80,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void navigateToTab(int navItemId, Bundle args) {
-        if (navItemId == R.id.nav_directory && args != null && args.containsKey("selected_category")) {
-            directoryFragment.setCategoryFilter(args.getString("selected_category"));
-        } else if (navItemId == R.id.nav_search && args != null && args.containsKey("search_query")) {
-            searchFragment.setSearchQuery(args.getString("search_query"));
+        if (navItemId == R.id.nav_directory && args != null) {
+            if (args.containsKey("selected_building_id")) {
+                directoryFragment.setSelectedBuilding(args.getString("selected_building_id"));
+            }
+            if (args.containsKey("selected_category")) {
+                directoryFragment.setCategoryFilter(args.getString("selected_category"));
+            }
+        } else if (navItemId == R.id.nav_search && args != null) {
+            if (args.containsKey("search_building_id")) {
+                searchFragment.setActiveBuildingFilter(args.getString("search_building_id"));
+            }
+            if (args.containsKey("search_query")) {
+                searchFragment.setSearchQuery(args.getString("search_query"));
+            }
         }
 
         bottomNav.setSelectedItemId(navItemId);

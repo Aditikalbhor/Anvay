@@ -42,6 +42,7 @@ public class SearchFragment extends Fragment implements LocationAdapter.OnLocati
     private ChipGroup chipGroupFilters;
     private PreferenceManager preferenceManager;
 
+    private String activeBuildingFilter = null; // null/All allows campus-wide search across all buildings
     private String activeCategoryFilter = "All";
     private String activeFloorFilter = "All Floors";
 
@@ -85,12 +86,17 @@ public class SearchFragment extends Fragment implements LocationAdapter.OnLocati
             }
         });
 
-        // Check if pre-filled search query passed via arguments
-        if (getArguments() != null && getArguments().containsKey("search_query")) {
-            String q = getArguments().getString("search_query");
-            if (q != null) {
-                etSearch.setText(q);
-                etSearch.setSelection(q.length());
+        // Check if pre-filled search query or building passed via arguments
+        if (getArguments() != null) {
+            if (getArguments().containsKey("search_building_id")) {
+                activeBuildingFilter = getArguments().getString("search_building_id");
+            }
+            if (getArguments().containsKey("search_query")) {
+                String q = getArguments().getString("search_query");
+                if (q != null) {
+                    etSearch.setText(q);
+                    etSearch.setSelection(q.length());
+                }
             }
         }
 
@@ -188,8 +194,21 @@ public class SearchFragment extends Fragment implements LocationAdapter.OnLocati
         }
     }
 
+    public void setActiveBuildingFilter(String buildingId) {
+        this.activeBuildingFilter = buildingId;
+        if (etSearch != null) {
+            performSearch(etSearch.getText().toString());
+        }
+    }
+
+    public String getActiveBuildingFilter() {
+        return activeBuildingFilter;
+    }
+
     private void performSearch(String query) {
-        List<LocationItem> results = LocationRepository.getInstance().searchLocations(query, activeCategoryFilter, activeFloorFilter);
+        List<LocationItem> results = LocationRepository.getInstance().searchLocations(
+                activeBuildingFilter, query, activeCategoryFilter, activeFloorFilter
+        );
         adapter.updateList(results);
 
         if (results.isEmpty()) {

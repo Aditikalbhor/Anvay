@@ -23,6 +23,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.gpp.anvay.R;
 import com.gpp.anvay.adapter.AdminRoomAdapter;
 import com.gpp.anvay.data.LocationRepository;
+import com.gpp.anvay.model.BuildingItem;
 import com.gpp.anvay.model.LocationItem;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class ManageRoomsActivity extends AppCompatActivity implements AdminRoomA
     private EditText etSearch;
 
     private final String[] categories = {"Classrooms", "Laboratory", "Staff Rooms", "HOD & Offices", "Washrooms", "Server Rooms", "Facilities"};
-    private final String[] floors = {"Ground Floor", "1st Floor", "2nd Floor", "3rd Floor"};
+    private final String[] defaultFloors = {"Ground Floor", "1st Floor", "2nd Floor", "3rd Floor"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +83,7 @@ public class ManageRoomsActivity extends AppCompatActivity implements AdminRoomA
     }
 
     private void filterRooms(String query) {
-        List<LocationItem> filtered = LocationRepository.getInstance().searchLocations(query, "All", "All Floors");
+        List<LocationItem> filtered = LocationRepository.getInstance().searchLocations(null, query, "All", "All Floors");
         adapter.updateList(filtered);
     }
 
@@ -102,7 +103,11 @@ public class ManageRoomsActivity extends AppCompatActivity implements AdminRoomA
         ArrayAdapter<String> catAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, categories);
         spCategory.setAdapter(catAdapter);
 
-        ArrayAdapter<String> floorAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, floors);
+        BuildingItem selectedBuilding = LocationRepository.getInstance().getSelectedBuilding();
+        List<String> buildingFloors = (selectedBuilding != null && !selectedBuilding.getSupportedFloors().isEmpty()) ?
+                selectedBuilding.getSupportedFloors() : Arrays.asList(defaultFloors);
+
+        ArrayAdapter<String> floorAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, buildingFloors);
         spFloor.setAdapter(floorAdapter);
 
         if (existingItem != null) {
@@ -129,8 +134,8 @@ public class ManageRoomsActivity extends AppCompatActivity implements AdminRoomA
                 }
             }
 
-            for (int i = 0; i < floors.length; i++) {
-                if (floors[i].equalsIgnoreCase(existingItem.getFloor())) {
+            for (int i = 0; i < buildingFloors.size(); i++) {
+                if (buildingFloors.get(i).equalsIgnoreCase(existingItem.getFloor())) {
                     spFloor.setSelection(i);
                     break;
                 }
@@ -161,6 +166,10 @@ public class ManageRoomsActivity extends AppCompatActivity implements AdminRoomA
                             facilitiesList = Arrays.asList(facRaw.split("\\s*,\\s*"));
                         }
 
+                        BuildingItem building = LocationRepository.getInstance().getSelectedBuilding();
+                        String bldgId = building != null ? building.getId() : LocationItem.DEFAULT_BUILDING_ID;
+                        String bldgName = building != null ? building.getName() : LocationItem.DEFAULT_BUILDING_NAME;
+
                         if (existingItem != null) {
                             existingItem.setRoomNumber(roomNo);
                             existingItem.setName(name);
@@ -170,11 +179,17 @@ public class ManageRoomsActivity extends AppCompatActivity implements AdminRoomA
                             existingItem.setInCharge(inCharge);
                             existingItem.setDescription(desc);
                             existingItem.setFacilities(facilitiesList);
+                            if (existingItem.getBuildingId() == null || existingItem.getBuildingId().isEmpty()) {
+                                existingItem.setBuildingId(bldgId);
+                                existingItem.setBuildingName(bldgName);
+                            }
                             LocationRepository.getInstance().updateLocation(existingItem);
                             Toast.makeText(ManageRoomsActivity.this, "Room updated successfully", Toast.LENGTH_SHORT).show();
                         } else {
                             LocationItem newItem = new LocationItem(
                                     "loc_" + UUID.randomUUID().toString().substring(0, 8),
+                                    bldgId,
+                                    bldgName,
                                     roomNo,
                                     name,
                                     category,

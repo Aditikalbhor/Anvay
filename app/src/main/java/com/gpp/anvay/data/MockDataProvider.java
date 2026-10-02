@@ -1,6 +1,7 @@
 package com.gpp.anvay.data;
 
 import com.gpp.anvay.model.AlertItem;
+import com.gpp.anvay.model.BuildingItem;
 import com.gpp.anvay.model.EmergencyContact;
 import com.gpp.anvay.model.LocationItem;
 import com.gpp.anvay.model.SafetyInstruction;
@@ -10,6 +11,19 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MockDataProvider {
+
+    public static List<BuildingItem> getInitialBuildings() {
+        List<BuildingItem> list = new ArrayList<>();
+        list.add(new BuildingItem(
+                "bldg_comp_it",
+                "Computer/IT Building",
+                "COMP-IT",
+                "Houses Computer Engineering and Information Technology departments across Ground, 1st, 2nd, and 3rd floors.",
+                Arrays.asList("Ground Floor", "1st Floor", "2nd Floor", "3rd Floor"),
+                true
+        ));
+        return list;
+    }
 
     public static List<LocationItem> getInitialLocations() {
         List<LocationItem> list = new ArrayList<>();

@@ -5,7 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LocationItem implements Serializable {
+    public static final String DEFAULT_BUILDING_ID = "bldg_comp_it";
+    public static final String DEFAULT_BUILDING_NAME = "Computer/IT Building";
+
     private String id;
+    private String buildingId;
+    private String buildingName;
     private String roomNumber;
     private String name;
     private String category;
@@ -21,6 +26,8 @@ public class LocationItem implements Serializable {
     private boolean isBookmarked;
 
     public LocationItem() {
+        this.buildingId = DEFAULT_BUILDING_ID;
+        this.buildingName = DEFAULT_BUILDING_NAME;
         this.facilities = new ArrayList<>();
         this.nearbyLandmarks = new ArrayList<>();
     }
@@ -29,7 +36,18 @@ public class LocationItem implements Serializable {
                         String department, String floor, String wing, String description,
                         String inCharge, String operatingHours, List<String> facilities,
                         List<String> nearbyLandmarks, String nearestExit) {
+        this(id, DEFAULT_BUILDING_ID, DEFAULT_BUILDING_NAME, roomNumber, name, category,
+                department, floor, wing, description, inCharge, operatingHours, facilities,
+                nearbyLandmarks, nearestExit);
+    }
+
+    public LocationItem(String id, String buildingId, String buildingName, String roomNumber,
+                        String name, String category, String department, String floor,
+                        String wing, String description, String inCharge, String operatingHours,
+                        List<String> facilities, List<String> nearbyLandmarks, String nearestExit) {
         this.id = id;
+        this.buildingId = (buildingId != null && !buildingId.isEmpty()) ? buildingId : DEFAULT_BUILDING_ID;
+        this.buildingName = (buildingName != null && !buildingName.isEmpty()) ? buildingName : DEFAULT_BUILDING_NAME;
         this.roomNumber = roomNumber;
         this.name = name;
         this.category = category;
@@ -48,6 +66,12 @@ public class LocationItem implements Serializable {
     // Getters and Setters
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
+
+    public String getBuildingId() { return buildingId; }
+    public void setBuildingId(String buildingId) { this.buildingId = buildingId; }
+
+    public String getBuildingName() { return buildingName; }
+    public void setBuildingName(String buildingName) { this.buildingName = buildingName; }
 
     public String getRoomNumber() { return roomNumber; }
     public void setRoomNumber(String roomNumber) { this.roomNumber = roomNumber; }

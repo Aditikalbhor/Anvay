@@ -108,7 +108,10 @@ public class LocationDetailActivity extends AppCompatActivity {
         tvFloor.setText(location.getFloor());
         tvName.setText(location.getName());
 
-        String deptStr = (location.getDepartment() != null ? location.getDepartment() : "Department") +
+        String bName = location.getBuildingName() != null && !location.getBuildingName().isEmpty() ?
+                location.getBuildingName() : "Computer/IT Building";
+
+        String deptStr = bName + " • " + (location.getDepartment() != null ? location.getDepartment() : "Department") +
                 (location.getWing() != null ? " • " + location.getWing() : "");
         tvDept.setText(deptStr);
 
@@ -171,7 +174,7 @@ public class LocationDetailActivity extends AppCompatActivity {
                 FeaturePlaceholderDialog.show(
                         LocationDetailActivity.this,
                         "Navigation to " + location.getRoomNumber(),
-                        "Indoor pathfinding and AR route guidance to " + location.getName() +
+                        "Indoor pathfinding and AR route guidance to " + location.getName() + " (" + bName + ")" +
                                 " will be activated in Phase 2 once spatial mapping calibration is complete.",
                         R.drawable.ic_navigation
                 );
@@ -180,8 +183,12 @@ public class LocationDetailActivity extends AppCompatActivity {
     }
 
     private void shareLocation() {
-        String shareBody = "Location at GPP Comp/IT Building:\n" +
+        String bName = location.getBuildingName() != null && !location.getBuildingName().isEmpty() ?
+                location.getBuildingName() : "Computer/IT Building";
+
+        String shareBody = "Location at GPP " + bName + ":\n" +
                 "• Room: " + location.getRoomNumber() + " (" + location.getName() + ")\n" +
+                "• Building: " + bName + "\n" +
                 "• Floor: " + location.getFloor() + " (" + location.getDepartment() + ")\n" +
                 "• In-Charge: " + location.getInCharge() + "\n" +
                 "• Nearest Exit: " + location.getNearestExit() + "\n\n" +

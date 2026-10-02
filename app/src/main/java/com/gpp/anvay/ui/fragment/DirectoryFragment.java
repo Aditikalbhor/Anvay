@@ -19,6 +19,7 @@ import com.google.android.material.chip.ChipGroup;
 import com.gpp.anvay.R;
 import com.gpp.anvay.adapter.LocationAdapter;
 import com.gpp.anvay.data.LocationRepository;
+import com.gpp.anvay.model.BuildingItem;
 import com.gpp.anvay.model.LocationItem;
 import com.gpp.anvay.ui.LocationDetailActivity;
 
@@ -34,6 +35,7 @@ public class DirectoryFragment extends Fragment implements LocationAdapter.OnLoc
     private ChipGroup chipGroupCategories;
     private ChipGroup chipGroupFloors;
 
+    private String selectedBuildingId = LocationItem.DEFAULT_BUILDING_ID;
     private String selectedCategory = "All";
     private String selectedFloor = "All Floors";
 
@@ -61,21 +63,34 @@ public class DirectoryFragment extends Fragment implements LocationAdapter.OnLoc
         adapter = new LocationAdapter(requireContext(), null, this);
         rvLocations.setAdapter(adapter);
 
-        setupFilters(view);
+        selectedBuildingId = LocationRepository.getInstance().getSelectedBuildingId();
 
-        // Check if preselected category passed via bundle
-        if (getArguments() != null && getArguments().containsKey("selected_category")) {
-            String preCat = getArguments().getString("selected_category");
-            if (preCat != null) {
-                selectedCategory = preCat;
-                selectCategoryChip(preCat);
+        setupCategoryFilters();
+        setupFloorChips();
+
+        // Check if preselected category or building passed via bundle
+        if (getArguments() != null) {
+            if (getArguments().containsKey("selected_building_id")) {
+                String preBldg = getArguments().getString("selected_building_id");
+                if (preBldg != null) {
+                    selectedBuildingId = preBldg;
+                    LocationRepository.getInstance().setSelectedBuildingId(preBldg);
+                    setupFloorChips();
+                }
+            }
+            if (getArguments().containsKey("selected_category")) {
+                String preCat = getArguments().getString("selected_category");
+                if (preCat != null) {
+                    selectedCategory = preCat;
+                    selectCategoryChip(preCat);
+                }
             }
         }
 
         applyFilters();
     }
 
-    private void setupFilters(View root) {
+    private void setupCategoryFilters() {
         chipGroupCategories.setOnCheckedStateChangeListener(new ChipGroup.OnCheckedStateChangeListener() {
             @Override
             public void onCheckedChanged(@NonNull ChipGroup group, @NonNull List<Integer> checkedIds) {
@@ -93,19 +108,59 @@ public class DirectoryFragment extends Fragment implements LocationAdapter.OnLoc
                 applyFilters();
             }
         });
+    }
+
+    private void setupFloorChips() {
+        if (chipGroupFloors == null) return;
+        chipGroupFloors.removeAllViews();
+
+        BuildingItem currentBuilding = LocationRepository.getInstance().getBuildingById(selectedBuildingId);
+        if (currentBuilding == null) {
+            currentBuilding = LocationRepository.getInstance().getSelectedBuilding();
+        }
+
+        // Add 'All Floors' chip
+        Chip allChip = new Chip(requireContext());
+        allChip.setId(View.generateViewId());
+        allChip.setText(getString(R.string.floor_all));
+        allChip.setCheckable(true);
+        chipGroupFloors.addView(allChip);
+
+        if (currentBuilding != null && currentBuilding.getSupportedFloors() != null) {
+            for (String floor : currentBuilding.getSupportedFloors()) {
+                Chip floorChip = new Chip(requireContext());
+                floorChip.setId(View.generateViewId());
+                floorChip.setText(floor);
+                floorChip.setCheckable(true);
+                chipGroupFloors.addView(floorChip);
+            }
+        }
+
+        // Select the active floor chip
+        boolean matched = false;
+        for (int i = 0; i < chipGroupFloors.getChildCount(); i++) {
+            Chip c = (Chip) chipGroupFloors.getChildAt(i);
+            if (c.getText().toString().equalsIgnoreCase(selectedFloor)) {
+                chipGroupFloors.check(c.getId());
+                matched = true;
+                break;
+            }
+        }
+        if (!matched && chipGroupFloors.getChildCount() > 0) {
+            chipGroupFloors.check(allChip.getId());
+            selectedFloor = "All Floors";
+        }
 
         chipGroupFloors.setOnCheckedStateChangeListener(new ChipGroup.OnCheckedStateChangeListener() {
             @Override
             public void onCheckedChanged(@NonNull ChipGroup group, @NonNull List<Integer> checkedIds) {
                 if (checkedIds.isEmpty()) return;
                 int id = checkedIds.get(0);
-                if (id == R.id.chipFloorAll) selectedFloor = "All Floors";
-                else if (id == R.id.chipFloorGround) selectedFloor = "Ground Floor";
-                else if (id == R.id.chipFloor1) selectedFloor = "1st Floor";
-                else if (id == R.id.chipFloor2) selectedFloor = "2nd Floor";
-                else if (id == R.id.chipFloor3) selectedFloor = "3rd Floor";
-
-                applyFilters();
+                Chip checkedChip = group.findViewById(id);
+                if (checkedChip != null) {
+                    selectedFloor = checkedChip.getText().toString();
+                    applyFilters();
+                }
             }
         });
     }
@@ -128,18 +183,30 @@ public class DirectoryFragment extends Fragment implements LocationAdapter.OnLoc
         applyFilters();
     }
 
+    public void setSelectedBuilding(String buildingId) {
+        this.selectedBuildingId = buildingId;
+        LocationRepository.getInstance().setSelectedBuildingId(buildingId);
+        setupFloorChips();
+        applyFilters();
+    }
+
     private void applyFilters() {
-        List<LocationItem> filtered = LocationRepository.getInstance().searchLocations("", selectedCategory, selectedFloor);
+        List<LocationItem> filtered = LocationRepository.getInstance().searchLocations(
+                selectedBuildingId, "", selectedCategory, selectedFloor
+        );
         adapter.updateList(filtered);
+
+        BuildingItem building = LocationRepository.getInstance().getBuildingById(selectedBuildingId);
+        String buildingName = building != null ? building.getName() : "Computer/IT Building";
 
         if (filtered.isEmpty()) {
             layoutEmpty.setVisibility(View.VISIBLE);
             rvLocations.setVisibility(View.GONE);
-            tvDirectoryCount.setText("No locations found");
+            tvDirectoryCount.setText(buildingName + " • No locations found");
         } else {
             layoutEmpty.setVisibility(View.GONE);
             rvLocations.setVisibility(View.VISIBLE);
-            tvDirectoryCount.setText("Showing " + filtered.size() + " locations");
+            tvDirectoryCount.setText(buildingName + " • Showing " + filtered.size() + " locations");
         }
     }
 
@@ -153,6 +220,8 @@ public class DirectoryFragment extends Fragment implements LocationAdapter.OnLoc
     @Override
     public void onResume() {
         super.onResume();
+        selectedBuildingId = LocationRepository.getInstance().getSelectedBuildingId();
+        setupFloorChips();
         applyFilters();
     }
 }

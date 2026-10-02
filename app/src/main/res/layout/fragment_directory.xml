@@ -130,45 +130,7 @@
                 android:layout_height="wrap_content"
                 app:selectionRequired="true"
                 app:singleLine="true"
-                app:singleSelection="true">
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFloorAll"
-                    style="@style/Widget.Material3.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/floor_all" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFloorGround"
-                    style="@style/Widget.Material3.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/floor_ground" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFloor1"
-                    style="@style/Widget.Material3.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/floor_first" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFloor2"
-                    style="@style/Widget.Material3.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/floor_second" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipFloor3"
-                    style="@style/Widget.Material3.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/floor_third" />
-
-            </com.google.android.material.chip.ChipGroup>
+                app:singleSelection="true" />
         </HorizontalScrollView>
 
     </LinearLayout>
