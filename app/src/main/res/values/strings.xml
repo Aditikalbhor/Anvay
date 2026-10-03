@@ -45,7 +45,6 @@
     <string name="floor_ground">Ground Floor</string>
     <string name="floor_first">1st Floor</string>
     <string name="floor_second">2nd Floor</string>
-    <string name="floor_third">3rd Floor</string>
 
     <!-- Search Screen -->
     <string name="search_hint">Search room no, lab, staff, facility…</string>

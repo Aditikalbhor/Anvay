@@ -23,11 +23,11 @@ public class LocationArchitectureTest {
         assertEquals("bldg_comp_it", compIt.getId());
         assertEquals("Computer/IT Building", compIt.getName());
         assertTrue("Computer/IT Building should be default", compIt.isDefault());
-        assertEquals(4, compIt.getSupportedFloors().size());
+        assertEquals(3, compIt.getSupportedFloors().size());
         assertTrue(compIt.getSupportedFloors().contains("Ground Floor"));
         assertTrue(compIt.getSupportedFloors().contains("1st Floor"));
         assertTrue(compIt.getSupportedFloors().contains("2nd Floor"));
-        assertTrue(compIt.getSupportedFloors().contains("3rd Floor"));
+        assertFalse(compIt.getSupportedFloors().contains("3rd Floor"));
     }
 
     @Test

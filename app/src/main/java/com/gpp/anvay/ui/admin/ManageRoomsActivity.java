@@ -38,7 +38,7 @@ public class ManageRoomsActivity extends AppCompatActivity implements AdminRoomA
     private EditText etSearch;
 
     private final String[] categories = {"Classrooms", "Laboratory", "Staff Rooms", "HOD & Offices", "Washrooms", "Server Rooms", "Facilities"};
-    private final String[] defaultFloors = {"Ground Floor", "1st Floor", "2nd Floor", "3rd Floor"};
+    private final String[] defaultFloors = {"Ground Floor", "1st Floor", "2nd Floor"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

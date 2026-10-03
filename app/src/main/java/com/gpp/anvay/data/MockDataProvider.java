@@ -18,8 +18,8 @@ public class MockDataProvider {
                 "bldg_comp_it",
                 "Computer/IT Building",
                 "COMP-IT",
-                "Houses Computer Engineering and Information Technology departments across Ground, 1st, 2nd, and 3rd floors.",
-                Arrays.asList("Ground Floor", "1st Floor", "2nd Floor", "3rd Floor"),
+                "Houses Computer Engineering and Information Technology departments across Ground, 1st, and 2nd floors.",
+                Arrays.asList("Ground Floor", "1st Floor", "2nd Floor"),
                 true
         ));
         return list;
@@ -335,55 +335,6 @@ public class MockDataProvider {
                 "Staircase B down to Ground"
         ));
 
-        // 3rd Floor Locations
-        list.add(new LocationItem(
-                "loc_3_301",
-                "C-301",
-                "Classroom C-301 (Third Year Comp A)",
-                "Classrooms",
-                "Computer Engineering",
-                "3rd Floor",
-                "East Wing",
-                "Final-year classroom with advanced seminar display and recording equipment.",
-                "Prof. P. M. Joshi",
-                "08:00 AM - 04:30 PM",
-                Arrays.asList("80 Seating", "Lecture Capture Camera", "Smart Projector", "Wi-Fi"),
-                Arrays.asList("Staircase A (8m)", "Project Incubation Lab 303 (20m)"),
-                "Staircase A down to Ground Floor"
-        ));
-
-        list.add(new LocationItem(
-                "loc_3_303",
-                "303",
-                "Project & Startup Incubation Hub",
-                "Facilities",
-                "Common / General",
-                "3rd Floor",
-                "Central Corridor",
-                "Collaborative co-working laboratory for student final-year capstone projects and hackathon teams.",
-                "Incubation Officer: Dr. K. S. Jadhav",
-                "08:00 AM - 07:00 PM",
-                Arrays.asList("Modular Whiteboards", "Discussion Pods", "3D Printer", "High-speed Mesh Wi-Fi"),
-                Arrays.asList("Auditorium 304 (Opposite)", "Staircase A (15m)"),
-                "Staircase A -> Ground Level"
-        ));
-
-        list.add(new LocationItem(
-                "loc_3_304",
-                "304",
-                "Auditorium & Smart Seminar Hall",
-                "Facilities",
-                "Common / General",
-                "3rd Floor",
-                "West Wing",
-                "Grand auditorium with 250 capacity for national conferences, cultural seminars, and symposiums.",
-                "Auditorium Manager",
-                "Event-based / 08:30 AM - 06:00 PM",
-                Arrays.asList("250 Plush Seats", "Central AC", "Digital Line Array Audio", "Motorized Screen"),
-                Arrays.asList("Staircase B (8m)", "Incubation Hub 303 (Opposite)"),
-                "Staircase B Fire Evacuation Route"
-        ));
-
         return list;
     }
 
@@ -393,7 +344,7 @@ public class MockDataProvider {
         list.add(new AlertItem(
                 "alert_01",
                 "Corridor Tile Repair: 2nd Floor East Wing",
-                "Floor maintenance in progress near Room IT-201. Please use Staircase B for reaching 2nd and 3rd floors safely.",
+                "Floor maintenance in progress near Room IT-201. Please use Staircase B for reaching 2nd floor safely.",
                 "Maintenance",
                 "Urgent",
                 "15 mins ago",
