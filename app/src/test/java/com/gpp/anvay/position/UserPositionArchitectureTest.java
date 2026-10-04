@@ -54,13 +54,13 @@ public class UserPositionArchitectureTest {
 
     @Test
     public void testNavigationNodeCreation() {
-        NavigationNode node = new NavigationNode("node_01", "bldg_comp_it", "Ground Floor", "loc_g_01", "ROOM_ENTRY");
+        NavigationNode node = new NavigationNode("node_01", "bldg_comp_it", "Ground Floor", "loc_g_01", NavigationNode.TYPE_ROOM_ENTRY);
 
         assertEquals("node_01", node.getNodeId());
         assertEquals("bldg_comp_it", node.getBuildingId());
         assertEquals("Ground Floor", node.getFloor());
         assertEquals("loc_g_01", node.getLinkedLocationId());
-        assertEquals("ROOM_ENTRY", node.getNodeType());
+        assertEquals(NavigationNode.TYPE_ROOM_ENTRY, node.getNodeType());
         assertNull(node.getX());
         assertNull(node.getY());
         assertNotNull(node.getConnectedNodeIds());
@@ -71,6 +71,16 @@ public class UserPositionArchitectureTest {
         assertEquals(2, node.getConnectedNodeIds().size());
         assertTrue(node.getConnectedNodeIds().contains("node_02"));
         assertTrue(node.getConnectedNodeIds().contains("node_03"));
+
+        // Verify only the 4 allowed navigation topology node types are valid
+        assertTrue(NavigationNode.isValidNodeType(NavigationNode.TYPE_ROOM_ENTRY));
+        assertTrue(NavigationNode.isValidNodeType(NavigationNode.TYPE_CORRIDOR_JUNCTION));
+        assertTrue(NavigationNode.isValidNodeType(NavigationNode.TYPE_STAIRCASE));
+        assertTrue(NavigationNode.isValidNodeType(NavigationNode.TYPE_CHECKPOINT));
+
+        // Verify EXIT is NOT a valid navigation node type
+        assertFalse(NavigationNode.isValidNodeType("EXIT"));
+        assertFalse(NavigationNode.isValidNodeType("EMERGENCY_EXIT"));
     }
 
     @Test
