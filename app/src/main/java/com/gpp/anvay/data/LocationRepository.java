@@ -89,6 +89,18 @@ public class LocationRepository {
                 return item;
             }
         }
+        // Legacy fallback mapping
+        if ("loc_g_01".equals(id)) return getLocationById("loc_gf_lab1");
+        if ("loc_g_02".equals(id)) return getLocationById("loc_gf_lab2");
+        if ("loc_1_101".equals(id)) return getLocationById("loc_ff_cet_lab1");
+        if ("loc_1_102".equals(id)) return getLocationById("loc_ff_cet_lab2");
+        if ("loc_1_103".equals(id)) return getLocationById("loc_ff_cet_lab3");
+        if ("loc_1_104".equals(id)) return getLocationById("loc_ff_cet_lab4");
+        if ("loc_1_105".equals(id)) return getLocationById("loc_ff_male_staff");
+        if ("loc_2_201".equals(id)) return getLocationById("loc_sf_cr21");
+        if ("loc_2_203".equals(id)) return getLocationById("loc_sf_cet7");
+        if ("loc_2_204".equals(id)) return getLocationById("loc_sf_cet8");
+        if ("loc_2_205".equals(id)) return getLocationById("loc_sf_lang_lab");
         return null;
     }
 

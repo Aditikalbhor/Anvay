@@ -18,7 +18,7 @@ public class MockDataProvider {
                 "bldg_comp_it",
                 "Computer/IT Building",
                 "COMP-IT",
-                "Houses Computer Engineering and Information Technology departments across Ground, 1st, and 2nd floors.",
+                "Houses Computer Engineering, Information Technology, and Science & Humanities departments across Ground, 1st, and 2nd floors.",
                 Arrays.asList("Ground Floor", "1st Floor", "2nd Floor"),
                 true
         ));
@@ -28,311 +28,944 @@ public class MockDataProvider {
     public static List<LocationItem> getInitialLocations() {
         List<LocationItem> list = new ArrayList<>();
 
-        // Ground Floor Locations
+        // =========================================================================
+        // GROUND FLOOR LOCATIONS (Verified Section 5)
+        // =========================================================================
+
         list.add(new LocationItem(
-                "loc_g_01",
-                "G-01",
-                "Computer Center Lab 1",
-                "Laboratory",
-                "Computer Engineering",
+                "loc_gf_gwc",
+                "GF-GWC",
+                "Girls WC",
+                "Washrooms",
+                "Common / General",
                 "Ground Floor",
                 "East Wing",
-                "Primary computing facility with 40 high-performance workstations for programming and simulations.",
-                "Prof. S. N. Joshi",
-                "08:00 AM - 05:30 PM",
-                Arrays.asList("40 Core i7 PCs", "Gigabit LAN", "Projector & Smart Board", "AC", "10kVA UPS"),
-                Arrays.asList("Main Entrance Gate (15m)", "Drinking Water Station (10m East)", "Staircase A (20m)"),
-                "Direct exit via Ground Floor East Main Gate"
+                "Sanitary washroom facility with clean running water, hygiene dispensers, and mirrors.",
+                "Sanitation Staff",
+                "24/7 Campus Hours",
+                Arrays.asList("Hygiene Dispensers", "Mirrors", "Exhaust Fans", "Clean Water Supply"),
+                Arrays.asList("Near Staircase S1", "Server Room"),
+                "Proceed via Staircase S1 or Ground Floor East Corridor exit."
         ));
 
         list.add(new LocationItem(
-                "loc_g_02",
-                "G-02",
-                "Programming & Data Structures Lab",
-                "Laboratory",
-                "Information Technology",
-                "Ground Floor",
-                "East Wing",
-                "Dedicated lab for C, C++, Java and Data Structures practical sessions.",
-                "Prof. N. K. Bagul",
-                "08:30 AM - 05:00 PM",
-                Arrays.asList("35 Desktop Workstations", "Overhead Projector", "Whiteboard", "High-speed Wi-Fi"),
-                Arrays.asList("Lab G-01 (Adjacent)", "Staff Room G-04 (15m)"),
-                "Ground Floor East Exit to Quadrangle"
-        ));
-
-        list.add(new LocationItem(
-                "loc_g_03",
-                "G-03 / HOD-IT",
-                "HOD Office - Information Technology",
-                "HOD & Offices",
-                "Information Technology",
-                "Ground Floor",
-                "Central Corridor",
-                "Head of Department office for IT Engineering academic administration and student counseling.",
-                "Dr. P. R. Deshmukh",
-                "09:00 AM - 05:00 PM",
-                Arrays.asList("Meeting Lounge", "Department Notice Board", "Printer & Scanner", "Telephone Desk"),
-                Arrays.asList("Department Notice Board (Front)", "Main Lobby (10m)", "Staircase A (15m)"),
-                "Main Central Lobby Exit"
-        ));
-
-        list.add(new LocationItem(
-                "loc_g_04",
-                "G-04",
-                "IT Department Staff Cabin",
-                "Staff Rooms",
-                "Information Technology",
-                "Ground Floor",
-                "East Wing",
-                "Faculty workstations and consultation cabins for Information Technology professors.",
-                "Staff In-Charge: Prof. M. B. Patil",
-                "08:30 AM - 05:30 PM",
-                Arrays.asList("12 Faculty Desks", "Reference Bookshelf", "Consultation Table", "LAN & Wi-Fi"),
-                Arrays.asList("HOD Office G-03 (10m)", "Lab G-02 (15m)"),
-                "East Exit Door directly leading to Open Courtyard"
-        ));
-
-        list.add(new LocationItem(
-                "loc_g_05",
-                "G-05",
-                "Network & Server Operations Center",
+                "loc_gf_server",
+                "GF-SRV",
+                "Server Room",
                 "Server Rooms",
                 "Common / General",
                 "Ground Floor",
-                "West Wing",
-                "Central college networking hub housing core switches, firewall racks, and intranet servers.",
+                "East Wing",
+                "Central server operations center housing campus network racks, switches, and firewall systems.",
                 "SysAdmin: Mr. K. R. Jagtap",
                 "Restricted Access (Authorized Only)",
-                Arrays.asList("Rack Servers", "Fire Suppression System", "Dedicated Dual AC", "Biometric Access"),
-                Arrays.asList("Staircase B (10m)", "Security Control Desk (20m)"),
-                "West Corridor Emergency Exit"
+                Arrays.asList("Rack Servers", "Dual AC Cooling", "Fire Suppression System", "Biometric Entry"),
+                Arrays.asList("Girls WC", "Lab 1"),
+                "Proceed via Ground Floor East Corridor exit."
         ));
 
         list.add(new LocationItem(
-                "loc_g_w1",
-                "G-W1",
-                "Gents Restroom - Ground Floor",
-                "Washrooms",
-                "Common / General",
-                "Ground Floor",
-                "West Wing",
-                "Clean, sanitized washroom facility with automated dispensers and water supply.",
-                "Maintenance Staff",
-                "24/7 Campus Hours",
-                Arrays.asList("Hand Dryers", "Mirror", "Exhaust System", "Wheelchair Accessible"),
-                Arrays.asList("Staircase B (5m)", "Server Room G-05 (15m)"),
-                "Staircase B Ground Exit"
-        ));
-
-        list.add(new LocationItem(
-                "loc_g_w2",
-                "G-W2",
-                "Ladies Restroom - Ground Floor",
-                "Washrooms",
-                "Common / General",
-                "Ground Floor",
-                "East Wing",
-                "Sanitary washroom with hygiene station and mirrors.",
-                "Maintenance Staff",
-                "24/7 Campus Hours",
-                Arrays.asList("Hygiene Dispensers", "Mirrors", "Exhaust Fans", "Clean Water Supply"),
-                Arrays.asList("Lab G-02 (10m)", "Staircase A (15m)"),
-                "East Wing Ground Exit"
-        ));
-
-        // 1st Floor Locations
-        list.add(new LocationItem(
-                "loc_1_101",
-                "C-101",
-                "Classroom C-101 (First Year Comp Div A)",
-                "Classrooms",
-                "Computer Engineering",
-                "1st Floor",
-                "East Wing",
-                "Spacious smart lecture hall equipped with digital acoustic podium and audio-visual projection.",
-                "Class Teacher: Prof. V. S. Mane",
-                "08:00 AM - 04:30 PM",
-                Arrays.asList("80 Seating Capacity", "Interactive Projector", "PA Audio System", "Dual Greenboard"),
-                Arrays.asList("Staircase A (8m Left)", "Water Dispenser 1st Floor (12m)"),
-                "Staircase A down to Ground Floor Main Exit"
-        ));
-
-        list.add(new LocationItem(
-                "loc_1_102",
-                "C-102",
-                "Classroom C-102 (First Year Comp Div B)",
-                "Classrooms",
-                "Computer Engineering",
-                "1st Floor",
-                "East Wing",
-                "Airy lecture room for theoretical courses with modern ergonomic benches and ceiling fans.",
-                "Class Teacher: Prof. S. A. Kadam",
-                "08:00 AM - 04:30 PM",
-                Arrays.asList("75 Seating Capacity", "Full HD Projector", "Broadband Wi-Fi", "Podium Mic"),
-                Arrays.asList("Classroom C-101 (Adjacent)", "Staff Cabin 105 (20m)"),
-                "Staircase A -> Ground Exit"
-        ));
-
-        list.add(new LocationItem(
-                "loc_1_103",
-                "C-103",
-                "Web Technology & Cloud Computing Lab",
+                "loc_gf_lab1",
+                "GF-LAB1",
+                "Lab 1",
                 "Laboratory",
                 "Computer Engineering",
-                "1st Floor",
+                "Ground Floor",
+                "East Wing",
+                "Computer Engineering practical laboratory equipped for programming and data structures.",
+                "Prof. S. N. Joshi",
+                "08:00 AM - 05:30 PM",
+                Arrays.asList("40 Core i7 Workstations", "Gigabit LAN", "Projector & Smart Screen", "UPS Backup"),
+                Arrays.asList("Server Room", "Lab 2"),
+                "Proceed via Ground Floor East Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_lab2",
+                "GF-LAB2",
+                "Lab 2",
+                "Laboratory",
+                "Computer Engineering",
+                "Ground Floor",
+                "East Wing",
+                "Computing laboratory for Object-Oriented Programming and Software Engineering practicals.",
+                "Prof. N. K. Bagul",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("35 Desktop Workstations", "Overhead Projector", "Whiteboard", "High-speed Wi-Fi"),
+                Arrays.asList("Lab 1", "Lab 3"),
+                "Proceed via Ground Floor East Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_lab3",
+                "GF-LAB3",
+                "Lab 3",
+                "Laboratory",
+                "Computer Engineering",
+                "Ground Floor",
                 "Central Corridor",
-                "Advanced practical lab tailored for Full-Stack development, Cloud setups, and API testing.",
+                "Hardware & Networking laboratory configured for microprocessors and digital electronics.",
                 "Prof. A. V. Kulkarni",
                 "08:30 AM - 05:00 PM",
-                Arrays.asList("35 Core i5 Workstations", "Smart Screen", "1 Gbps Fiber Link", "Centralized Storage"),
-                Arrays.asList("HOD Office 106 (Opposite)", "Staircase A (18m)"),
-                "Staircase A down to Ground Floor"
+                Arrays.asList("30 PC Systems", "Microprocessor Trainer Kits", "Logic Analyzers", "LAN"),
+                Arrays.asList("Lab 2", "Lab 4"),
+                "Proceed via Ground Floor Central Lobby exit."
         ));
 
         list.add(new LocationItem(
-                "loc_1_104",
-                "C-104",
-                "Database & Operating Systems Lab",
+                "loc_gf_lab4",
+                "GF-LAB4",
+                "Lab 4",
+                "Laboratory",
+                "Computer Engineering",
+                "Ground Floor",
+                "Central Corridor",
+                "Advanced Software Systems and Database Development laboratory.",
+                "Prof. T. D. Gaikwad",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("35 Core i5 Workstations", "Linux Dual Boot", "Interactive Board", "AC"),
+                Arrays.asList("Lab 3", "Boys WC"),
+                "Proceed via Ground Floor Central Lobby exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_bwc",
+                "GF-BWC",
+                "Boys WC",
+                "Washrooms",
+                "Common / General",
+                "Ground Floor",
+                "Central Corridor",
+                "Sanitized restroom facility for male students and faculty members.",
+                "Sanitation Staff",
+                "24/7 Campus Hours",
+                Arrays.asList("Hand Dryers", "Mirror", "Exhaust System", "Sanitary Stations"),
+                Arrays.asList("Lab 4", "CM Staff Room 2"),
+                "Proceed via Ground Floor Central Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_cm_staff2",
+                "GF-CMS2",
+                "CM Staff Room 2",
+                "Staff Rooms",
+                "Computer Engineering",
+                "Ground Floor",
+                "Central Corridor",
+                "Faculty consultation room and workstations for Computer Engineering professors.",
+                "Prof. G. R. Shinde",
+                "08:30 AM - 05:30 PM",
+                Arrays.asList("Faculty Desks", "Consultation Area", "Intercom", "Wi-Fi"),
+                Arrays.asList("Boys WC", "IT Lab 1"),
+                "Proceed via Ground Floor Central Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_it_lab1",
+                "GF-ITL1",
+                "IT Lab 1",
+                "Laboratory",
+                "Information Technology",
+                "Ground Floor",
+                "West Wing",
+                "Information Technology introductory programming and scripting laboratory.",
+                "Prof. M. B. Patil",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("35 Workstations", "Smart Projector", "Wi-Fi 6 Router", "Centralized Storage"),
+                Arrays.asList("CM Staff Room 2", "IT Lab 2"),
+                "Proceed via Ground Floor West Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_it_lab2",
+                "GF-ITL2",
+                "IT Lab 2",
+                "Laboratory",
+                "Information Technology",
+                "Ground Floor",
+                "West Wing",
+                "Multimedia and Web Technologies laboratory for IT Engineering students.",
+                "Prof. R. T. Shinde",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("30 PC Systems", "High Resolution Displays", "Web Design Suite", "LAN"),
+                Arrays.asList("IT Lab 1", "IT Lab 3"),
+                "Proceed via Ground Floor West Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_it_lab3",
+                "GF-ITL3",
+                "IT Lab 3",
+                "Laboratory",
+                "Information Technology",
+                "Ground Floor",
+                "West Wing",
+                "Database Systems and Cloud Infrastructure laboratory.",
+                "Prof. V. N. Bhende",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("35 GPU Nodes", "Oracle / PostgreSQL Server", "Projector", "AC"),
+                Arrays.asList("IT Lab 2", "IT Lab 4"),
+                "Proceed via Ground Floor West Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_it_lab4",
+                "GF-ITL4",
+                "IT Lab 4",
+                "Laboratory",
+                "Information Technology",
+                "Ground Floor",
+                "West Wing",
+                "Mobile Application Development and Network Security practical laboratory.",
+                "Prof. D. K. Pawar",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("30 Workstations", "Android SDK Suite", "Switch Racks", "LAN"),
+                Arrays.asList("IT Lab 3", "TPO Office"),
+                "Proceed via Ground Floor West Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_tpo",
+                "GF-TPO",
+                "TPO Office",
+                "HOD & Offices",
+                "Common / General",
+                "Ground Floor",
+                "West Wing",
+                "Training & Placement Office for student internships, placement drives, and career guidance.",
+                "TPO In-Charge: Prof. S. A. Kadam",
+                "09:00 AM - 05:00 PM",
+                Arrays.asList("Interview Cabins", "Conference Table", "Student Notice Board", "Printer Desk"),
+                Arrays.asList("IT Lab 4", "Lab 5"),
+                "Proceed via Ground Floor West Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_lab5",
+                "GF-LAB5",
+                "Lab 5",
+                "Laboratory",
+                "Computer Engineering",
+                "Ground Floor",
+                "West Wing",
+                "Final Year Capstone Project Development and Innovation laboratory.",
+                "Prof. V. S. Mane",
+                "08:30 AM - 05:30 PM",
+                Arrays.asList("25 Development Nodes", "IoT Kits", "Soldering Station", "Smart Screen"),
+                Arrays.asList("TPO Office", "CM HOD and Staff Room 1"),
+                "Proceed via Ground Floor West Corridor exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_cm_hod_staff1",
+                "GF-CMHOD",
+                "CM HOD and Staff Room 1",
+                "HOD & Offices",
+                "Computer Engineering",
+                "Ground Floor",
+                "Central Wing",
+                "Head of Department Office and main faculty chamber for Computer Engineering.",
+                "Dr. M. S. Patil (HOD)",
+                "09:00 AM - 05:00 PM",
+                Arrays.asList("HOD Chamber", "Faculty Desks", "Meeting Lounge", "Department Archive"),
+                Arrays.asList("Lab 5", "IT HOD & Staff Room"),
+                "Proceed via Ground Floor Central Lobby exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_it_hod_staff",
+                "GF-ITHOD",
+                "IT HOD & Staff Room",
+                "HOD & Offices",
+                "Information Technology",
+                "Ground Floor",
+                "Central Wing",
+                "Head of Department Office and main faculty chamber for Information Technology.",
+                "Dr. P. R. Deshmukh (HOD)",
+                "09:00 AM - 05:00 PM",
+                Arrays.asList("HOD Chamber", "Faculty Cabins", "Consultation Table", "Intercom"),
+                Arrays.asList("CM HOD and Staff Room 1", "Staircase S2"),
+                "Proceed via Ground Floor Central Lobby exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_s1",
+                "GF-S1",
+                "Staircase S1",
+                "Facilities",
+                "Common / General",
+                "Ground Floor",
+                "East Wing",
+                "Vertical staircase S1 providing access from Ground Floor to 1st Floor.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("Wide Steps", "Handrails", "Emergency Illumination"),
+                Arrays.asList("Girls WC", "Server Room"),
+                "Direct Ground Floor East exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_s2",
+                "GF-S2",
+                "Staircase S2",
+                "Facilities",
+                "Common / General",
+                "Ground Floor",
+                "Central Wing",
+                "Vertical staircase S2 providing access from Ground Floor to 1st Floor.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("Wide Steps", "Handrails", "Emergency Illumination"),
+                Arrays.asList("IT HOD & Staff Room", "Central Lobby"),
+                "Direct Ground Floor Central exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_gf_s3",
+                "GF-S3",
+                "Staircase S3",
+                "Facilities",
+                "Common / General",
+                "Ground Floor",
+                "West Wing",
+                "Vertical staircase S3 providing access from Ground Floor to 1st Floor.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("Wide Steps", "Handrails", "Emergency Illumination"),
+                Arrays.asList("Lab 5", "West Corridor"),
+                "Direct Ground Floor West exit."
+        ));
+
+        // =========================================================================
+        // 1ST FLOOR LOCATIONS (Verified Section 6)
+        // =========================================================================
+
+        list.add(new LocationItem(
+                "loc_ff_gwc",
+                "FF-GWC",
+                "Girls WC",
+                "Washrooms",
+                "Common / General",
+                "1st Floor",
+                "East Wing",
+                "Sanitary washroom for female students and staff on the 1st Floor.",
+                "Sanitation Staff",
+                "24/7 Campus Hours",
+                Arrays.asList("Hygiene Dispensers", "Mirrors", "Clean Water Supply"),
+                Arrays.asList("Near Staircase S1", "Male Staff Room"),
+                "Take Staircase S1 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_male_staff",
+                "FF-MSR",
+                "Male Staff Room",
+                "Staff Rooms",
+                "Common / General",
+                "1st Floor",
+                "East Wing",
+                "Staff room and consultation area for faculty members.",
+                "Faculty In-Charge",
+                "08:30 AM - 05:30 PM",
+                Arrays.asList("Faculty Workstations", "Tea Station", "Wi-Fi", "Intercom"),
+                Arrays.asList("Girls WC", "Server Room"),
+                "Take Staircase S1 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_server",
+                "FF-SRV",
+                "Server Room",
+                "Server Rooms",
+                "Common / General",
+                "1st Floor",
+                "East Wing",
+                "First floor network distribution room and switch hub.",
+                "SysAdmin",
+                "Restricted Access",
+                Arrays.asList("Switch Racks", "AC", "UPS Backup"),
+                Arrays.asList("Male Staff Room", "CET Lab 1"),
+                "Take Staircase S1 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cet_lab1",
+                "FF-CET1",
+                "CET Lab 1",
                 "Laboratory",
                 "Computer Engineering",
                 "1st Floor",
-                "West Wing",
-                "Equipped with Linux and Oracle database environments for student system programming experiments.",
-                "Prof. T. D. Gaikwad",
+                "East Wing",
+                "Computer Engineering Technology practical laboratory 1.",
+                "Prof. P. B. Mane",
                 "08:30 AM - 05:00 PM",
-                Arrays.asList("30 PC Systems", "Linux Dual-Boot", "Laser Printer", "Wall Projector"),
-                Arrays.asList("Staircase B (12m Right)", "Restroom 1st Floor (25m)"),
-                "Staircase B down to Ground Floor Exit"
+                Arrays.asList("35 Workstations", "Smart Screen", "Gigabit LAN"),
+                Arrays.asList("Server Room", "CET Lab 2"),
+                "Take Staircase S1 down to Ground Floor."
         ));
 
         list.add(new LocationItem(
-                "loc_1_106",
-                "HOD-CO",
-                "HOD Office - Computer Engineering",
-                "HOD & Offices",
-                "Computer Engineering",
-                "1st Floor",
-                "Central Corridor",
-                "Office of the Head of Department, Computer Engineering. Academic governance and approvals.",
-                "Dr. M. S. Patil",
-                "09:00 AM - 05:00 PM",
-                Arrays.asList("Conference Table", "Visitor Waiting Area", "Document Archive", "Direct Line"),
-                Arrays.asList("Web Tech Lab 103 (Opposite)", "Staff Cabin 105 (10m)"),
-                "Staircase A to Ground Floor Lobby"
-        ));
-
-        list.add(new LocationItem(
-                "loc_1_105",
-                "105",
-                "Computer Dept Faculty Room",
-                "Staff Rooms",
+                "loc_ff_cet_lab2",
+                "FF-CET2",
+                "CET Lab 2",
+                "Laboratory",
                 "Computer Engineering",
                 "1st Floor",
                 "East Wing",
-                "Staff workspace for Computer Engineering teaching faculty and laboratory assistants.",
-                "Staff Coordinator: Prof. G. R. Shinde",
-                "08:30 AM - 05:30 PM",
-                Arrays.asList("15 Personal Cubicles", "Intercom System", "Tea/Coffee Station", "Department Library"),
-                Arrays.asList("HOD Office 106 (10m)", "Classroom C-102 (15m)"),
-                "Staircase A to Ground Floor"
+                "Computer Engineering Technology practical laboratory 2.",
+                "Prof. K. N. Patil",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("35 Workstations", "Projector", "LAN"),
+                Arrays.asList("CET Lab 1", "CET Lab 3"),
+                "Take Staircase S1 down to Ground Floor."
         ));
 
         list.add(new LocationItem(
-                "loc_1_108",
-                "108",
-                "Department Seminar & Presentation Room",
+                "loc_ff_cet_lab3",
+                "FF-CET3",
+                "CET Lab 3",
+                "Laboratory",
+                "Computer Engineering",
+                "1st Floor",
+                "Central Corridor",
+                "Computer Engineering Technology practical laboratory 3.",
+                "Prof. S. R. Joshi",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("30 Workstations", "Whiteboard", "LAN"),
+                Arrays.asList("CET Lab 2", "CET Lab 4"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cet_lab4",
+                "FF-CET4",
+                "CET Lab 4",
+                "Laboratory",
+                "Information Technology",
+                "1st Floor",
+                "Central Corridor",
+                "Computer Engineering Technology practical laboratory 4.",
+                "Prof. D. M. Shinde",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("30 Workstations", "Smart Display", "LAN"),
+                Arrays.asList("CET Lab 3", "CET Lab 5"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cet_lab5",
+                "FF-CET5",
+                "CET Lab 5",
+                "Laboratory",
+                "Information Technology",
+                "1st Floor",
+                "Central Corridor",
+                "Computer Engineering Technology practical laboratory 5.",
+                "Prof. A. R. Kadam",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("35 Workstations", "Projector", "LAN"),
+                Arrays.asList("CET Lab 4", "CET Lab 6"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cet_lab6",
+                "FF-CET6",
+                "CET Lab 6",
+                "Laboratory",
+                "Information Technology",
+                "1st Floor",
+                "Central Corridor",
+                "Computer Engineering Technology practical laboratory 6.",
+                "Prof. V. T. Pawar",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("35 Workstations", "High Speed Internet", "LAN"),
+                Arrays.asList("CET Lab 5", "Water Cooler"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_water_cooler",
+                "FF-WC",
+                "Water Cooler",
+                "Facilities",
+                "Common / General",
+                "1st Floor",
+                "Central Corridor",
+                "Purified drinking water station with cooling and filtration unit.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("RO Water Purifier", "Cooling Unit", "Sanitized Dispenser"),
+                Arrays.asList("CET Lab 6", "Boys WC"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_bwc",
+                "FF-BWC",
+                "Boys WC",
+                "Washrooms",
+                "Common / General",
+                "1st Floor",
+                "Central Corridor",
+                "Sanitary restroom facility for male students and staff on 1st Floor.",
+                "Sanitation Staff",
+                "24/7 Campus Hours",
+                Arrays.asList("Hand Dryers", "Mirror", "Exhaust System"),
+                Arrays.asList("Water Cooler", "CR 20"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cr20",
+                "CR 20",
+                "CR 20",
+                "Classrooms",
+                "Computer Engineering",
+                "1st Floor",
+                "West Wing",
+                "Lecture classroom 20 with audio-visual projection and interactive blackboard.",
+                "Prof. B. S. Deshmukh",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Full HD Projector", "Podium Mic", "Wi-Fi"),
+                Arrays.asList("Boys WC", "CR 19"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cr19",
+                "CR 19",
+                "CR 19",
+                "Classrooms",
+                "Computer Engineering",
+                "1st Floor",
+                "West Wing",
+                "Lecture classroom 19 for departmental lectures and seminars.",
+                "Prof. M. K. Kulkarni",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Interactive Screen", "PA System"),
+                Arrays.asList("CR 20", "Tutorial Room"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_tutorial",
+                "FF-TUT",
+                "Tutorial Room",
+                "Classrooms",
+                "Common / General",
+                "1st Floor",
+                "West Wing",
+                "Dedicated tutorial and remedial classroom for small-group discussions.",
+                "Faculty In-Charge",
+                "08:30 AM - 04:30 PM",
+                Arrays.asList("40 Seating Capacity", "Whiteboard", "Discussion Round Tables"),
+                Arrays.asList("CR 19", "CR 18"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cr18",
+                "CR 18",
+                "CR 18",
+                "Classrooms",
+                "Information Technology",
+                "1st Floor",
+                "West Wing",
+                "Lecture classroom 18 positioned in corrected sequence adjacent to Tutorial Room and CR 17.",
+                "Prof. S. N. Patil",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Projector", "Podium", "Wi-Fi"),
+                Arrays.asList("Tutorial Room", "CR 17"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cr17",
+                "CR 17",
+                "CR 17",
+                "Classrooms",
+                "Information Technology",
+                "1st Floor",
+                "West Wing",
+                "Lecture classroom 17 positioned in corrected sequence (directly below CR 21).",
+                "Prof. R. P. Shinde",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Projector", "Smart Board", "Wi-Fi"),
+                Arrays.asList("CR 18", "CR 16"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cr16",
+                "CR 16",
+                "CR 16",
+                "Classrooms",
+                "Computer Engineering",
+                "1st Floor",
+                "West Wing",
+                "Lecture classroom 16 for theoretical engineering courses.",
+                "Prof. V. A. Jagtap",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Full HD Projector", "Wi-Fi"),
+                Arrays.asList("CR 17", "CR 15"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cr15",
+                "CR 15",
+                "CR 15",
+                "Classrooms",
+                "Computer Engineering",
+                "1st Floor",
+                "West Wing",
+                "Lecture classroom 15 for degree and diploma engineering batches.",
+                "Prof. T. G. Thorat",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Projector", "PA System"),
+                Arrays.asList("CR 16", "CR 14"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_cr14",
+                "CR 14",
+                "CR 14",
+                "Classrooms",
+                "Computer Engineering",
+                "1st Floor",
+                "West Wing",
+                "Lecture classroom 14 at the west corridor end.",
+                "Prof. N. D. Bagul",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Digital Board", "Wi-Fi"),
+                Arrays.asList("CR 15", "Staircase S3"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_s1",
+                "FF-S1",
+                "Staircase S1",
+                "Facilities",
+                "Common / General",
+                "1st Floor",
+                "East Wing",
+                "Vertical staircase S1 providing access between Ground Floor, 1st Floor, and 2nd Floor.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("Wide Steps", "Handrails", "Emergency Illumination"),
+                Arrays.asList("Girls WC", "Male Staff Room"),
+                "Take Staircase S1 down to Ground Floor East exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_s2",
+                "FF-S2",
+                "Staircase S2",
+                "Facilities",
+                "Common / General",
+                "1st Floor",
+                "Central Wing",
+                "Vertical staircase S2 providing access between Ground Floor, 1st Floor, and 2nd Floor.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("Wide Steps", "Handrails", "Emergency Illumination"),
+                Arrays.asList("Water Cooler", "Boys WC"),
+                "Take Staircase S2 down to Ground Floor Central exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_ff_s3",
+                "FF-S3",
+                "Staircase S3",
                 "Facilities",
                 "Common / General",
                 "1st Floor",
                 "West Wing",
-                "Acoustic seminar hall for mini-project presentations, guest webinars, and technical seminars.",
-                "Seminar Coordinator",
-                "09:00 AM - 05:00 PM",
-                Arrays.asList("100 Tiered Seats", "Surround Sound", "Dual Laser Projectors", "Video Conferencing"),
-                Arrays.asList("Database Lab 104 (Adjacent)", "Staircase B (15m)"),
-                "Staircase B down to West Exit"
+                "Vertical staircase S3 providing access between Ground Floor, 1st Floor, and 2nd Floor.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("Wide Steps", "Handrails", "Emergency Illumination"),
+                Arrays.asList("CR 14", "CR 15"),
+                "Take Staircase S3 down to Ground Floor West exit."
         ));
 
-        // 2nd Floor Locations
-        list.add(new LocationItem(
-                "loc_2_201",
-                "IT-201",
-                "Classroom IT-201 (Second Year IT)",
-                "Classrooms",
-                "Information Technology",
-                "2nd Floor",
-                "East Wing",
-                "Standard lecture room equipped with hybrid learning aids and high-lumen digital projector.",
-                "Prof. D. K. Pawar",
-                "08:00 AM - 04:30 PM",
-                Arrays.asList("70 Capacity", "Smart Interactive Board", "Wi-Fi 6 Router", "Emergency Alarm Node"),
-                Arrays.asList("Staircase A (10m)", "AI/ML Lab 203 (15m)"),
-                "Staircase A -> Down to Ground Level"
-        ));
+        // =========================================================================
+        // 2ND FLOOR LOCATIONS (Verified Section 7)
+        // =========================================================================
 
         list.add(new LocationItem(
-                "loc_2_203",
-                "IT-203",
-                "Artificial Intelligence & ML Lab",
-                "Laboratory",
-                "Information Technology",
-                "2nd Floor",
-                "Central Corridor",
-                "Specialized laboratory with GPU-enabled computing nodes for Deep Learning and Vision projects.",
-                "Prof. R. T. Shinde",
-                "08:30 AM - 05:30 PM",
-                Arrays.asList("25 RTX-GPU Nodes", "High Resolution Display", "TensorFlow/PyTorch Suite", "AC"),
-                Arrays.asList("Cyber Security Lab 204 (Opposite)", "Drinking Water 2nd Floor (8m)"),
-                "Staircase A (East) or Staircase B (West)"
-        ));
-
-        list.add(new LocationItem(
-                "loc_2_204",
-                "IT-204",
-                "Cyber Security & Network Forensics Lab",
-                "Laboratory",
-                "Information Technology",
-                "2nd Floor",
-                "Central Corridor",
-                "Isolated sandbox network lab for ethical hacking, cryptography drills, and vulnerability testing.",
-                "Prof. V. N. Bhende",
-                "09:00 AM - 05:00 PM",
-                Arrays.asList("Isolated Switch Racks", "30 Forensic Workstations", "Fire Extinguisher Box"),
-                Arrays.asList("AI/ML Lab 203 (Opposite)", "Staff Meeting Cabin 207 (12m)"),
-                "Staircase B towards West Evacuation Gate"
-        ));
-
-        list.add(new LocationItem(
-                "loc_2_205",
-                "IT-205",
-                "IoT & Embedded Systems Workshop",
-                "Laboratory",
-                "Information Technology",
-                "2nd Floor",
-                "West Wing",
-                "Hardware prototyping space with Arduino, Raspberry Pi, sensor kits, and oscilloscope stations.",
-                "Lab Tech: Mr. A. B. Thorat",
-                "08:30 AM - 05:00 PM",
-                Arrays.asList("Soldering Stations", "Oscilloscopes", "Sensor Inventory", "Safety First Aid Kit"),
-                Arrays.asList("Staircase B (6m Left)", "Boys Washroom 2nd Floor (14m)"),
-                "Staircase B -> West Exit Door"
-        ));
-
-        list.add(new LocationItem(
-                "loc_2_w1",
-                "2-W1",
-                "Gents Restroom - 2nd Floor",
+                "loc_sf_gwc",
+                "2F-GWC",
+                "Girls WC",
                 "Washrooms",
                 "Common / General",
                 "2nd Floor",
+                "East Wing",
+                "Sanitary restroom facility for female students and staff on 2nd Floor.",
+                "Sanitation Staff",
+                "24/7 Campus Hours",
+                Arrays.asList("Hygiene Dispensers", "Mirrors", "Clean Water Supply"),
+                Arrays.asList("Near Staircase S1", "Science & Humanities Staff Room"),
+                "Take Staircase S1 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_sh_staff1",
+                "2F-SHS1",
+                "Science & Humanities Staff Room",
+                "Staff Rooms",
+                "Science & Humanities",
+                "2nd Floor",
+                "East Wing",
+                "Science and Humanities Department faculty consultation and staff workspace (East).",
+                "Prof. S. K. Joshi",
+                "08:30 AM - 05:30 PM",
+                Arrays.asList("Faculty Cubicles", "Intercom", "Wi-Fi"),
+                Arrays.asList("Girls WC", "CET 7"),
+                "Take Staircase S1 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_cet7",
+                "2F-CET7",
+                "CET 7",
+                "Laboratory",
+                "Computer Engineering",
+                "2nd Floor",
+                "East Wing",
+                "Computer Engineering Technology advanced practical laboratory 7.",
+                "Prof. D. K. Pawar",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("35 Workstations", "Smart Screen", "LAN"),
+                Arrays.asList("Science & Humanities Staff Room", "CET 8"),
+                "Take Staircase S1 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_cet8",
+                "2F-CET8",
+                "CET 8",
+                "Laboratory",
+                "Information Technology",
+                "2nd Floor",
+                "East Wing",
+                "Computer Engineering Technology advanced practical laboratory 8.",
+                "Prof. R. T. Shinde",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("35 Workstations", "Full HD Projector", "LAN"),
+                Arrays.asList("CET 7", "Language Lab"),
+                "Take Staircase S1 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_lang_lab",
+                "2F-LL",
+                "Language Lab",
+                "Laboratory",
+                "Science & Humanities",
+                "2nd Floor",
+                "Central Corridor",
+                "Digital Language and Communication Skills laboratory with acoustic headsets.",
+                "Prof. M. B. Patil",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("40 Multimedia PCs", "Noise Canceling Headsets", "Pronunciation Software"),
+                Arrays.asList("CET 8", "Chemistry Lab"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_chem_lab",
+                "2F-CHEM",
+                "Chemistry Lab",
+                "Laboratory",
+                "Science & Humanities",
+                "2nd Floor",
+                "Central Corridor",
+                "Engineering Chemistry experimental laboratory with safety eyewash and fume exhausts.",
+                "Prof. V. S. Mane",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("Reagent Racks", "Fume Hoods", "Safety First Aid Kit", "Eyewash"),
+                Arrays.asList("Language Lab", "Boys WC"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_bwc",
+                "2F-BWC",
+                "Boys WC",
+                "Washrooms",
+                "Common / General",
+                "2nd Floor",
+                "Central Corridor",
+                "Sanitary restroom facility for male students and faculty on 2nd Floor.",
+                "Sanitation Staff",
+                "24/7 Campus Hours",
+                Arrays.asList("Hand Dryers", "Mirror", "Exhaust Fans"),
+                Arrays.asList("Chemistry Lab", "Dark Room"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_dark_room",
+                "2F-DRK",
+                "Dark Room",
+                "Facilities",
+                "Science & Humanities",
+                "2nd Floor",
+                "Central Corridor",
+                "Specialized optical and photometric testing dark room.",
+                "Lab Tech",
+                "09:00 AM - 04:30 PM",
+                Arrays.asList("Monochromatic Light Sources", "Spectrometer Stations", "Optical Benches"),
+                Arrays.asList("Boys WC", "CR 21"),
+                "Take Staircase S2 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_cr21",
+                "CR 21",
+                "CR 21",
+                "Classrooms",
+                "Information Technology",
+                "2nd Floor",
                 "West Wing",
-                "Restroom facility with automated sensor faucets and exhaust ventilation.",
-                "Maintenance Staff",
-                "Campus Hours",
-                Arrays.asList("Sanitary Utilities", "Mirrors", "Sensor Taps"),
-                Arrays.asList("IoT Lab 205 (Adjacent)", "Staircase B (10m)"),
-                "Staircase B down to Ground"
+                "Lecture classroom 21 positioned vertically above CR 17.",
+                "Prof. T. D. Gaikwad",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Full HD Projector", "Smart Podium", "Wi-Fi"),
+                Arrays.asList("Dark Room", "CR 22"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_cr22",
+                "CR 22",
+                "CR 22",
+                "Classrooms",
+                "Information Technology",
+                "2nd Floor",
+                "West Wing",
+                "Lecture classroom 22 positioned vertically above CR 18.",
+                "Prof. A. V. Kulkarni",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Interactive Board", "PA Audio System", "Wi-Fi"),
+                Arrays.asList("CR 21", "CR 23"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_cr23",
+                "CR 23",
+                "CR 23",
+                "Classrooms",
+                "Computer Engineering",
+                "2nd Floor",
+                "West Wing",
+                "Lecture classroom 23 for advanced degree engineering sessions.",
+                "Prof. G. R. Shinde",
+                "08:00 AM - 04:30 PM",
+                Arrays.asList("75 Seating Capacity", "Projector", "Podium", "Wi-Fi"),
+                Arrays.asList("CR 22", "Admission Room"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_admission",
+                "2F-ADM",
+                "Admission Room",
+                "Facilities",
+                "Common / General",
+                "2nd Floor",
+                "West Wing",
+                "Centralized student counseling and document verification admission center.",
+                "Admission Officer",
+                "09:00 AM - 05:00 PM",
+                Arrays.asList("Verification Counters", "Waiting Area", "LAN Desks", "Printer / Scanner"),
+                Arrays.asList("CR 23", "Science & Humanities Staff Room"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_sh_staff2",
+                "2F-SHS2",
+                "Science & Humanities Staff Room",
+                "Staff Rooms",
+                "Science & Humanities",
+                "2nd Floor",
+                "West Wing",
+                "Science and Humanities Department faculty consultation and staff workspace (West).",
+                "Prof. N. K. Bagul",
+                "08:30 AM - 05:30 PM",
+                Arrays.asList("Faculty Desks", "Reference Library", "Wi-Fi"),
+                Arrays.asList("Admission Room", "Physics Lab"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_physics_lab",
+                "2F-PHYS",
+                "Physics Lab",
+                "Laboratory",
+                "Science & Humanities",
+                "2nd Floor",
+                "West Wing",
+                "Engineering Physics practical laboratory equipped with spectrometers, laser sets, and optical sensors.",
+                "Prof. S. A. Kadam",
+                "08:30 AM - 05:00 PM",
+                Arrays.asList("Laser Bench Sets", "Diffraction Gratings", "Digital Galvanometers", "Dark Storage"),
+                Arrays.asList("Science & Humanities Staff Room", "Staircase S3"),
+                "Take Staircase S3 down to Ground Floor."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_s1",
+                "SF-S1",
+                "Staircase S1",
+                "Facilities",
+                "Common / General",
+                "2nd Floor",
+                "East Wing",
+                "Vertical staircase S1 providing access between 1st Floor and 2nd Floor.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("Wide Steps", "Handrails", "Emergency Illumination"),
+                Arrays.asList("Girls WC", "Science & Humanities Staff Room"),
+                "Take Staircase S1 down to 1st Floor and Ground Floor East exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_s2",
+                "SF-S2",
+                "Staircase S2",
+                "Facilities",
+                "Common / General",
+                "2nd Floor",
+                "Central Wing",
+                "Vertical staircase S2 providing access between 1st Floor and 2nd Floor.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("Wide Steps", "Handrails", "Emergency Illumination"),
+                Arrays.asList("Chemistry Lab", "Boys WC"),
+                "Take Staircase S2 down to 1st Floor and Ground Floor Central exit."
+        ));
+
+        list.add(new LocationItem(
+                "loc_sf_s3",
+                "SF-S3",
+                "Staircase S3",
+                "Facilities",
+                "Common / General",
+                "2nd Floor",
+                "West Wing",
+                "Vertical staircase S3 providing access between 1st Floor and 2nd Floor.",
+                "Campus Facility",
+                "24/7 Campus Hours",
+                Arrays.asList("Wide Steps", "Handrails", "Emergency Illumination"),
+                Arrays.asList("Physics Lab", "Science & Humanities Staff Room"),
+                "Take Staircase S3 down to 1st Floor and Ground Floor West exit."
         ));
 
         return list;
@@ -344,7 +977,7 @@ public class MockDataProvider {
         list.add(new AlertItem(
                 "alert_01",
                 "Corridor Tile Repair: 2nd Floor East Wing",
-                "Floor maintenance in progress near Room IT-201. Please use Staircase B for reaching 2nd floor safely.",
+                "Floor maintenance in progress near Room CET 7. Please use Staircase S2 for reaching 2nd floor safely.",
                 "Maintenance",
                 "Urgent",
                 "15 mins ago",
@@ -355,11 +988,11 @@ public class MockDataProvider {
         list.add(new AlertItem(
                 "alert_02",
                 "Lab Shift Notice: Operating Systems Practical",
-                "Due to network maintenance in Lab C-104, today's afternoon practical session is shifted to Computer Center Lab 1 (G-01).",
+                "Due to network maintenance in Lab 4, today's afternoon practical session is shifted to Lab 1 (GF-LAB1).",
                 "Relocation",
                 "Medium",
                 "1 hour ago",
-                "Room C-104 -> Room G-01",
+                "Lab 4 -> Lab 1",
                 true
         ));
 
@@ -457,7 +1090,7 @@ public class MockDataProvider {
                 "Immediate actions to take upon hearing the fire alarm or discovering smoke/flames in the building.",
                 Arrays.asList(
                         "Activate nearest fire pull station if alarm is not ringing.",
-                        "Evacuate immediately via designated staircases (Staircase A or B).",
+                        "Evacuate immediately via designated staircases (Staircase S1, S2, or S3).",
                         "DO NOT use elevators or lift shafts during a fire emergency.",
                         "Stay low if there is smoke; cover mouth and nose with a damp cloth.",
                         "Assemble at Open Sports Ground opposite the IT Wing for headcount."
@@ -474,7 +1107,7 @@ public class MockDataProvider {
                         "DROP onto your hands and knees immediately.",
                         "COVER your head and neck under sturdy desks or interior walls away from glass windows.",
                         "HOLD ON until the shaking completely stops.",
-                        "Once shaking ceases, calmly exit building via emergency stairs.",
+                        "Once shaking ceases, calmly exit building via staircases.",
                         "Stay clear of high-voltage power lines and brick facades outside."
                 ),
                 "Central Campus Open Quadrangle",
@@ -487,7 +1120,7 @@ public class MockDataProvider {
                 "Steps to assist an injured student, faculty member, or visitor before professional medics arrive.",
                 Arrays.asList(
                         "Call Campus Medical Room (+91 20 2567 6825) or 108 immediately.",
-                        "First Aid kits are stationed in Lab G-01, Lab 103, and Room 205.",
+                        "First Aid kits are stationed in Lab 1, Lab 5, and Staff Rooms.",
                         "Do not move unconscious persons unless there is imminent environmental hazard.",
                         "Assign a volunteer to guide the emergency ambulance from Main Gate."
                 ),

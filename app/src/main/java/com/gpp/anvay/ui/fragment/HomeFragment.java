@@ -94,17 +94,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // 1. Navigation Button (Placeholder)
+        // 1. Navigation Button
         MaterialCardView cardIndoorNav = view.findViewById(R.id.cardIndoorNav);
         cardIndoorNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FeaturePlaceholderDialog.show(
-                        requireContext(),
-                        "Indoor Navigation (Phase 2)",
-                        "Indoor pathfinding, live routing, and AR navigation will be integrated in Phase 2 once the spatial anchors of the Comp/IT building are finalized.",
-                        R.drawable.ic_navigation
-                );
+                startActivity(new Intent(requireContext(), com.gpp.anvay.ui.NavigationActivity.class));
             }
         });
 

@@ -90,6 +90,14 @@ public class UserPositionManager {
     }
 
     /**
+     * Sets or updates current user position directly (e.g. manual / simulated mode).
+     */
+    public synchronized void setCurrentPosition(UserPosition position) {
+        this.currentPosition = position;
+        notifyListeners(position);
+    }
+
+    /**
      * Retrieves the current user position if established, or null.
      */
     public synchronized UserPosition getCurrentPosition() {

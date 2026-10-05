@@ -167,17 +167,14 @@ public class LocationDetailActivity extends AppCompatActivity {
             });
         }
 
-        // Navigate button click placeholder
+        // Navigate button click
         btnNavigate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FeaturePlaceholderDialog.show(
-                        LocationDetailActivity.this,
-                        "Navigation to " + location.getRoomNumber(),
-                        "Indoor pathfinding and AR route guidance to " + location.getName() + " (" + bName + ")" +
-                                " will be activated in Phase 2 once spatial mapping calibration is complete.",
-                        R.drawable.ic_navigation
-                );
+                Intent navIntent = new Intent(LocationDetailActivity.this, NavigationActivity.class);
+                navIntent.putExtra("destination_id", location.getId());
+                navIntent.putExtra("location_item", location);
+                startActivity(navIntent);
             }
         });
     }
