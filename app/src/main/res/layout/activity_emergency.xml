@@ -56,7 +56,7 @@
                         android:backgroundTint="#4DFFFFFF"
                         android:paddingHorizontal="10dp"
                         android:paddingVertical="4dp"
-                        android:text="PRIORITY EVACUATION"
+                        android:text="SAFETY &amp; EMERGENCY GUIDANCE"
                         android:textColor="@color/on_emergency"
                         android:textSize="11sp"
                         android:textStyle="bold" />
@@ -111,7 +111,7 @@
                             android:background="@drawable/bg_circle_icon"
                             android:backgroundTint="@color/emergency_container"
                             android:padding="10dp"
-                            android:src="@drawable/ic_exit"
+                            android:src="@drawable/ic_stairs"
                             app:tint="@color/emergency_red" />
 
                         <LinearLayout
@@ -142,7 +142,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="Primary Assembly Zone: Open Sports Ground"
+                                android:text="Follow building safety instructions and contact emergency services if required."
                                 android:textColor="@color/text_secondary"
                                 android:textSize="12sp" />
                         </LinearLayout>

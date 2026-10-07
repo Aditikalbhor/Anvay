@@ -20,7 +20,7 @@
     <string name="btn_floor_maps">Floor Maps</string>
     <string name="btn_floor_maps_desc">Explore 2D/3D building layouts</string>
     <string name="btn_emergency_mode">Emergency Mode</string>
-    <string name="btn_emergency_mode_desc">Instant exit guidance &amp; safety contacts</string>
+    <string name="btn_emergency_mode_desc">Safety guidance &amp; emergency hotlines</string>
     <string name="btn_building_directory">Building Directory</string>
     <string name="btn_building_directory_desc">Browse labs, classrooms, staff cabins</string>
     <string name="explore_categories">Explore Categories</string>
@@ -61,7 +61,7 @@
     <string name="section_facilities">Available Facilities</string>
     <string name="section_nearby">Nearby Landmarks &amp; Utilities</string>
     <string name="section_info">Information &amp; In-Charge</string>
-    <string name="section_emergency_exit">Nearest Evacuation Exit</string>
+    <string name="section_emergency_exit">Evacuation &amp; Safety Guidance</string>
     <string name="operating_hours">Hours:</string>
     <string name="in_charge">In-Charge:</string>
     <string name="department">Department:</string>
@@ -70,12 +70,12 @@
 
     <!-- Emergency Screen -->
     <string name="emergency_guidance_title">EMERGENCY GUIDANCE</string>
-    <string name="emergency_banner_sub">Stay calm. Follow designated evacuation paths and instructions.</string>
-    <string name="btn_start_emergency_guidance">Start Emergency Guidance</string>
-    <string name="nearest_exit_title">Nearest Primary Exit</string>
-    <string name="nearest_exit_desc">Ground Floor Main Exit Gate &amp; Fire Staircase A</string>
+    <string name="emergency_banner_sub">Follow building safety instructions and contact emergency services if required.</string>
+    <string name="btn_start_emergency_guidance">View Evacuation Guidance</string>
+    <string name="nearest_exit_title">Building Safety &amp; Evacuation</string>
+    <string name="nearest_exit_desc">Follow verified building corridors and staircases (S1, S2, S3) to Ground Floor.</string>
     <string name="emergency_contacts_title">One-Touch Emergency Hotlines</string>
-    <string name="safety_protocols_title">Safety &amp; Evacuation Protocols</string>
+    <string name="safety_protocols_title">Safety &amp; Evacuation Instructions</string>
     <string name="safety_equipment_title">Safety Equipment Locations</string>
 
     <!-- Alerts Screen -->

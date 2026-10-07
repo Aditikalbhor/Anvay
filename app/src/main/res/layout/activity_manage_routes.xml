@@ -120,7 +120,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Node G-MAIN: Ground Floor Central Entrance Lobby"
+                        android:text="Node GF-S1: Ground Floor East Landing (Staircase S1)"
                         android:textColor="@color/text_primary"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -129,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Connected: Staircase A, Lab G-01, HOD IT Office G-03"
+                        android:text="Connected: Staircase S1, Lab 1, Server Room, Girls WC"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -155,7 +155,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Node ST-1A: 1st Floor East Landing (Staircase A)"
+                        android:text="Node FF-S1: 1st Floor East Landing (Staircase S1)"
                         android:textColor="@color/text_primary"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -164,7 +164,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Connected: Classroom C-101, C-102, Web Tech Lab 103"
+                        android:text="Connected: CET Lab 1, CET Lab 2, Male Staff Room"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -190,7 +190,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Node ST-2B: 2nd Floor West Landing (Staircase B)"
+                        android:text="Node SF-S3: 2nd Floor West Landing (Staircase S3)"
                         android:textColor="@color/text_primary"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -199,7 +199,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
-                        android:text="Connected: IoT Lab 205, Forensics Lab 204, Restroom 2-W1"
+                        android:text="Connected: Physics Lab, Science &amp; Humanities Staff Room, CR 23"
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
                 </LinearLayout>

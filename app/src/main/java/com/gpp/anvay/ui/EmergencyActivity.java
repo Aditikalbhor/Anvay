@@ -62,13 +62,13 @@ public class EmergencyActivity extends AppCompatActivity {
 
     private void showEmergencyGuidanceOverview() {
         new MaterialAlertDialogBuilder(this)
-                .setTitle("🚨 Emergency Evacuation Guidance")
-                .setMessage("1. Head toward the nearest illuminated EXIT sign.\n" +
-                        "2. East Wing occupants: Use Fire Staircase A.\n" +
-                        "3. West Wing occupants: Use Fire Staircase B.\n" +
-                        "4. Descend to the Ground Floor Main Gate.\n" +
-                        "5. Report to the Primary Assembly Zone at Open Sports Ground.\n\n" +
-                        "Note: Real-time dynamic sensor rerouting will be activated in Phase 2.")
+                .setTitle("🚨 Emergency & Evacuation Guidance")
+                .setMessage("1. Stay calm and follow all building safety instructions.\n" +
+                        "2. Move towards the nearest verified vertical staircase (Staircase S1, S2, or S3).\n" +
+                        "3. Descend carefully to the Ground Floor.\n" +
+                        "4. Follow standard building corridors to exit to open grounds.\n" +
+                        "5. Contact emergency services or campus security if assistance is required.\n\n" +
+                        "Note: ANVAY Computer/IT Building routes cover Ground, 1st, and 2nd floors connected via Staircases S1, S2, and S3.")
                 .setIcon(R.drawable.ic_emergency)
                 .setPositiveButton("I Am Safe / Acknowledged", null)
                 .show();

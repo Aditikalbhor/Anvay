@@ -42,7 +42,7 @@ public class ManageEmergencyActivity extends AppCompatActivity {
                 new MaterialAlertDialogBuilder(ManageEmergencyActivity.this)
                         .setTitle("📢 Emergency Broadcast Broadcasted")
                         .setMessage("Simulation alert sent to all connected campus app clients:\n\n" +
-                                "\"EMERGENCY: Immediate building evacuation test in progress. Please move towards nearest stairwells A & B.\"")
+                                "\"EMERGENCY: Immediate building evacuation test in progress. Please move towards nearest staircases S1, S2, or S3.\"")
                         .setPositiveButton("OK", null)
                         .show();
             }

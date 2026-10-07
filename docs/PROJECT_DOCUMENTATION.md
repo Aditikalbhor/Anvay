@@ -121,9 +121,9 @@ The application also supports route changes when a particular route becomes unav
 
 The Emergency Guidance module is designed to assist users during emergency situations.
 
-It provides guidance toward safer exits and safety-related locations.
+It provides clearly visible one-touch emergency hotlines (Campus Security, Medical/First Aid, Fire, Department Desk, Ambulance 108), safety instructions, and evacuation guidance via verified building paths and vertical staircases (S1, S2, S3) across Ground, 1st, and 2nd floors.
 
-The module is intended to make emergency navigation more accessible within the building.
+The module makes emergency contacts and safety guidance directly accessible within the building.
 
 5.7 Alerts & Notices
 
@@ -359,23 +359,25 @@ User profile
 
 Building information
 
-11. Emergency Navigation Concept
+11. Emergency Guidance & Navigation Concept
 
-Emergency situations may require users to change their planned route.
+Emergency situations may require users to access safety guidance, contact emergency services, or navigate using verified staircases.
 
-ANVAY provides emergency guidance and supports route changes when a particular path is unavailable.
+ANVAY provides emergency guidance and supports route navigation using verified building corridors and staircases across Ground, 1st, and 2nd floors.
 
-The intended concept is:
+The emergency guidance concept is:
 
-Emergency Detected
+Emergency Activated
         ↓
-Identify Available Route
+Display Emergency Instructions
         ↓
-Check Route Availability
+Show Emergency Contacts
         ↓
-Guide User Toward Safer Exit
+Allow One-Touch Calling
         ↓
-Provide Updated Guidance
+Provide Available Building Navigation Guidance
+        ↓
+Guide User Through Verified Building Paths / Staircases
 
 12. Setup & Installation
 

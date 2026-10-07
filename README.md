@@ -64,7 +64,7 @@ Emergency Guidance
 
 ## 🚨 Emergency Guidance
 
-ANVAY can provide guidance toward safer exits during an emergency and supports dynamic route changes when a particular route becomes unavailable.
+ANVAY provides emergency guidance and safety instructions during emergencies, offering clearly visible one-touch emergency hotlines (Campus Security, Medical/First Aid, Fire, Department Desk, Ambulance 108) and guiding users through verified building staircases and corridors across Ground, 1st, and 2nd floors.
 
 ## 📂 Project Structure
 

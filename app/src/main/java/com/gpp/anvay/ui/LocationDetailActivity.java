@@ -118,7 +118,7 @@ public class LocationDetailActivity extends AppCompatActivity {
         tvInCharge.setText(location.getInCharge() != null && !location.getInCharge().isEmpty() ? location.getInCharge() : "General Department Staff");
         tvHours.setText(location.getOperatingHours() != null && !location.getOperatingHours().isEmpty() ? location.getOperatingHours() : "08:30 AM - 05:30 PM");
         tvDesc.setText(location.getDescription() != null ? location.getDescription() : "No detailed description available.");
-        tvNearestExit.setText(location.getNearestExit() != null ? location.getNearestExit() : "Follow central staircase to Ground Floor emergency exit.");
+        tvNearestExit.setText(location.getNearestExit() != null ? location.getNearestExit() : "Follow building staircases (S1, S2, S3) down to Ground Floor.");
 
         // Facilities Chips
         chipGroupFacilities.removeAllViews();

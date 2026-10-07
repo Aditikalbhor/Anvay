@@ -999,7 +999,7 @@ public class MockDataProvider {
         list.add(new AlertItem(
                 "alert_03",
                 "Campus Fire Safety Drill Simulation",
-                "Annual emergency evacuation and fire drill will be held on Friday at 03:00 PM. Follow evacuation markers to the Sports Ground.",
+                "Annual emergency evacuation and fire drill will be held on Friday at 03:00 PM. Follow evacuation guidance to the Open Campus Grounds.",
                 "Emergency",
                 "Normal",
                 "Today, 09:00 AM",
@@ -1026,55 +1026,46 @@ public class MockDataProvider {
 
         list.add(new EmergencyContact(
                 "emg_01",
-                "Campus Security Main Gate Post",
-                "Mr. R. D. Shinde (Head Guard)",
-                "+91 20 2567 6801",
+                "Campus Security",
+                "Main Gate Security Desk (Demo/Sample)",
+                "+91 20 0000 0001",
                 "Main Gate Security Cabin",
                 "police"
         ));
 
         list.add(new EmergencyContact(
                 "emg_02",
-                "GPP Medical Health Room",
-                "Dr. S. K. Joshi (Campus Doctor)",
-                "+91 20 2567 6825",
+                "Medical / First Aid",
+                "Campus Health Center (Demo/Sample)",
+                "+91 20 0000 0002",
                 "Admin Block, Ground Floor Room 12",
                 "medical"
         ));
 
         list.add(new EmergencyContact(
                 "emg_03",
-                "Fire Safety & Evacuation Marshall",
-                "Prof. P. B. Mane",
-                "+91 98220 54321",
-                "Comp/IT Building, Room 105",
+                "Fire / Fire Safety",
+                "Fire Safety In-Charge (Demo/Sample)",
+                "101",
+                "Computer/IT Building, Ground Floor",
                 "fire"
         ));
 
         list.add(new EmergencyContact(
                 "emg_04",
-                "Comp Engineering Dept Emergency Desk",
-                "Dr. M. S. Patil (HOD)",
-                "+91 20 2567 6850",
-                "1st Floor HOD Office",
+                "Department / College Emergency Contact",
+                "Comp/IT Department Desk (Demo/Sample)",
+                "+91 20 0000 0003",
+                "Computer/IT Building, Ground Floor HOD Office",
                 "admin"
         ));
 
         list.add(new EmergencyContact(
                 "emg_05",
-                "Pune Municipal Fire Station (Shivajinagar)",
-                "Emergency Control Room",
-                "101 / +91 20 2550 6333",
-                "Shivajinagar Fire Station",
-                "fire"
-        ));
-
-        list.add(new EmergencyContact(
-                "emg_06",
-                "City Ambulance Services",
-                "Emergency Medical Dispatch",
+                "Ambulance (108)",
+                "Emergency Medical Dispatch (Public Service)",
                 "108",
-                "Pune Central",
+                "City Emergency Medical Services",
                 "medical"
         ));
 
@@ -1086,31 +1077,31 @@ public class MockDataProvider {
 
         list.add(new SafetyInstruction(
                 "safe_01",
-                "Fire Evacuation Protocol",
-                "Immediate actions to take upon hearing the fire alarm or discovering smoke/flames in the building.",
+                "Fire Safety & Evacuation Guidance",
+                "Immediate actions to take upon hearing the fire alarm or discovering smoke or flames in the building.",
                 Arrays.asList(
                         "Activate nearest fire pull station if alarm is not ringing.",
-                        "Evacuate immediately via designated staircases (Staircase S1, S2, or S3).",
+                        "Evacuate calmly via verified vertical staircases (Staircase S1, S2, or S3).",
                         "DO NOT use elevators or lift shafts during a fire emergency.",
                         "Stay low if there is smoke; cover mouth and nose with a damp cloth.",
-                        "Assemble at Open Sports Ground opposite the IT Wing for headcount."
+                        "Proceed to open campus grounds away from the building."
                 ),
-                "Open Sports Ground (Main Quadrangle)",
+                "Open Campus Grounds",
                 "fire"
         ));
 
         list.add(new SafetyInstruction(
                 "safe_02",
                 "Earthquake Safety Protocol (Drop, Cover & Hold)",
-                "Safety measures during active seismic tremors and subsequent post-quake evacuation.",
+                "Safety measures during active seismic tremors and subsequent post-quake movement.",
                 Arrays.asList(
                         "DROP onto your hands and knees immediately.",
                         "COVER your head and neck under sturdy desks or interior walls away from glass windows.",
                         "HOLD ON until the shaking completely stops.",
-                        "Once shaking ceases, calmly exit building via staircases.",
-                        "Stay clear of high-voltage power lines and brick facades outside."
+                        "Once shaking ceases, calmly move to Ground Floor via staircases (S1, S2, S3).",
+                        "Stay clear of high-voltage power lines and exterior walls outside."
                 ),
-                "Central Campus Open Quadrangle",
+                "Open Campus Area",
                 "shield"
         ));
 
@@ -1119,25 +1110,25 @@ public class MockDataProvider {
                 "Medical Emergency & First Aid Response",
                 "Steps to assist an injured student, faculty member, or visitor before professional medics arrive.",
                 Arrays.asList(
-                        "Call Campus Medical Room (+91 20 2567 6825) or 108 immediately.",
-                        "First Aid kits are stationed in Lab 1, Lab 5, and Staff Rooms.",
+                        "Call Campus Medical Desk or Ambulance (108) immediately.",
+                        "First Aid kits are stationed in departmental labs and staff rooms.",
                         "Do not move unconscious persons unless there is imminent environmental hazard.",
-                        "Assign a volunteer to guide the emergency ambulance from Main Gate."
+                        "Coordinate with volunteers to guide the emergency ambulance to the building."
                 ),
-                "GPP Medical Health Room (Admin Ground Floor)",
+                "Ground Floor Building Entrance / Medical Room",
                 "medical"
         ));
 
         list.add(new SafetyInstruction(
                 "safe_04",
-                "Severe Weather & Power Grid Outage",
-                "Guidance during severe thunderstorm, flash rain, or sudden power breakdown.",
+                "Severe Weather & Power Outage Protocol",
+                "Guidance during severe thunderstorms, flash flooding, or sudden power breakdown.",
                 Arrays.asList(
-                        "Emergency backup battery lights will activate along all main stairwells and corridors.",
+                        "Emergency backup lighting will illuminate main stairwells (S1, S2, S3) and corridors.",
                         "Disconnect sensitive lab equipment from power sockets.",
-                        "Remain inside designated safe rooms until weather clearance is broadcasted by Admin."
+                        "Remain inside designated rooms until weather clearance is confirmed."
                 ),
-                "Building Ground Floor Central Lobby",
+                "Ground Floor Central Lobby / Designated Rooms",
                 "stairs"
         ));
 

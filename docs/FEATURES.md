@@ -68,23 +68,25 @@ ANVAY includes a dedicated Emergency Guidance module.
 ### Features
 
 - Access emergency guidance from the application.
-- Provide guidance toward safer exits.
-- Display safety-related information.
-- Support emergency-oriented route changes.
-- Provide centralized access to emergency information.
+- One-touch emergency hotlines (Campus Security, Medical/First Aid, Fire, Department Desk, Ambulance 108).
+- Display building safety and evacuation instructions.
+- Provide building navigation guidance via verified staircases (S1, S2, S3) across Ground, 1st, and 2nd floors.
+- Support route changes when a particular path becomes unavailable.
 
 ### Emergency Flow
 
 ```text
-Emergency Situation
+Emergency Activated
         ↓
-Identify Available Route
+Display Emergency Instructions
         ↓
-Check Route Availability
+Show Emergency Contacts
         ↓
-Guide User
+Allow One-Touch Calling
         ↓
-Safer Exit / Safety Location
+Provide Available Building Navigation Guidance
+        ↓
+Guide User Through Verified Building Paths / Staircases
 ```
 
 ---

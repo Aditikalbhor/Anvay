@@ -200,8 +200,8 @@ public class ManageRoomsActivity extends AppCompatActivity implements AdminRoomA
                                     inCharge,
                                     "08:30 AM - 05:30 PM",
                                     facilitiesList,
-                                    Arrays.asList("Central Corridor", "Staircase A"),
-                                    "Staircase A -> Ground Exit"
+                                    Arrays.asList("Central Corridor", "Staircase S1"),
+                                    "Follow Staircase S1 or S2 to Ground Floor"
                             );
                             LocationRepository.getInstance().addLocation(newItem);
                             Toast.makeText(ManageRoomsActivity.this, "Room added successfully", Toast.LENGTH_SHORT).show();

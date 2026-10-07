@@ -79,7 +79,7 @@ public class SafetyInstructionAdapter extends RecyclerView.Adapter<SafetyInstruc
                 }
             }
             tvSafetySteps.setText(sb.toString());
-            tvAssemblyPoint.setText("Assembly Point: " + item.getAssemblyPoint());
+            tvAssemblyPoint.setText("Safe Area / Location: " + item.getAssemblyPoint());
 
             if ("shield".equalsIgnoreCase(item.getIconType())) {
                 ivSafetyIcon.setImageResource(R.drawable.ic_shield);

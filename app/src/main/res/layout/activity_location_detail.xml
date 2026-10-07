@@ -448,7 +448,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="2dp"
-                                android:text="Staircase A down to Ground Floor Main Exit"
+                                android:text="Follow building staircases (S1, S2, S3) down to Ground Floor"
                                 android:textColor="#7F1D1D"
                                 android:textSize="13sp" />
                         </LinearLayout>
