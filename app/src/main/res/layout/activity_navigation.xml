@@ -218,18 +218,37 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Visual Guidance Launch Button (Prominent) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLaunchVisualGuidance"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/primary"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Start Photo-Grounded Visual Guidance"
+                android:textColor="@color/text_on_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="14dp"
+                app:icon="@drawable/ic_floor_map"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@color/text_on_dark" />
+
             <!-- AR Navigation Launch Button (Prominent) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLaunchAR"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/accent_teal"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:text="Start AR Navigation Experience"
+                android:text="Start AR Camera Overlay"
                 android:textColor="@color/text_on_dark"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:cornerRadius="14dp"
                 app:icon="@drawable/ic_camera"

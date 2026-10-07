@@ -95,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 searchFragment.setSearchQuery(args.getString("search_query"));
             }
         }
-
         bottomNav.setSelectedItemId(navItemId);
     }
 }

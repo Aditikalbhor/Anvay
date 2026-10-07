@@ -2,269 +2,154 @@
 
 ANVAY is a Smart Indoor Navigation & Emergency Guidance System developed for educational buildings.
 
-The application provides students, visitors, and staff with a centralized mobile platform for finding locations, navigating the building, accessing emergency guidance, and viewing important notices.
+The application provides students, visitors, and staff with a centralized mobile platform for finding locations, navigating the building via photo-grounded visual guidance and AR, accessing emergency guidance, and viewing important notices.
 
 ---
 
-## 🧭 1. Indoor Navigation
+## 🧭 1. Indoor Navigation & Photo-Grounded Visual Guidance
 
 ANVAY provides indoor navigation within the supported areas of the Computer/IT Building.
 
-### Features
+### Core Features
 
 - Search for locations inside the building.
 - Select a destination.
-- View location information.
-- Navigate toward the selected destination.
-- Support navigation across multiple floors.
-- Handle route changes when a particular route becomes unavailable.
+- View detailed location information (In-charge, operating hours, facilities).
+- Standard turn-by-turn navigation route guidance.
+- **Photo-Grounded Visual Navigation:** Real photographs captured during a physical building walkthrough serve as visual landmarks for corridors, junctions, room entrances, and staircase landings.
+- **Multi-Floor Staircase Transitions:** Clear visual guidance and alerts when ascending or descending staircases (S1, S2, S3).
+- **Augmented Reality (AR) Overlay:** Live camera feed direction overlays utilizing the identical underlying `NavigationRoute`.
+- **Building Level Indicator:** 3D-style floor perspective visualizer indicating active and target floors.
+- **Dynamic Route Recalculation:** Automatic recalculation using BFS pathfinding when paths are modified.
 
 ### Supported Floors
 
 - Ground Floor
-- First Floor
-- Second Floor
+- 1st Floor
+- 2nd Floor
+
+*(Note: The Computer/IT Building has strictly 3 floors. No 3rd floor exists).*
 
 ---
 
-## 🔎 2. Location Search
+## 📸 2. Photo-Grounded Visual Navigation Architecture
+
+ANVAY implements a dedicated visual navigation pipeline:
+
+```text
+Building (Computer/IT Building)
+  ↓
+Floor (Ground / 1st / 2nd)
+  ↓
+NavigationNode (ROOM_ENTRY, CORRIDOR_JUNCTION, STAIRCASE, CHECKPOINT)
+  ↓
+NavigationGraph (Single Source of Truth)
+  ↓
+PathFinder (BFS Algorithm)
+  ↓
+NavigationRoute
+  ↓
+VisualNavigationManager
+  ├── VisualNavigationRepository (80 verified local photos)
+  ├── VisualNavigationStep (Floor transitions, ARDirection, visual landmarks)
+  └── VisualNavigationActivity (Photo display, floor indicators, step controls)
+```
+
+### Visual Landmark Types
+- `ROOM_ENTRANCE`: Verified entrance door views (e.g. IT Labs 1–4, CR14–CR22, Staff Rooms).
+- `CORRIDOR_VIEW`: Perspective corridor pathways.
+- `STAIRCASE_VIEW`: Approach views to stairwells S1, S2, S3.
+- `STAIRCASE_LANDING`: Mid-level and floor-level landing views.
+- `JUNCTION_VIEW`: Main wing corridor intersections.
+- `FLOOR_TRANSITION`: Ascending / descending stairwell transitions.
+- `DESTINATION_VIEW`: Arrival confirmation view.
+
+---
+
+## 🔎 3. Location Search & Directory
 
 Users can search for rooms and facilities within the building.
 
 ### Features
 
-- Location search
-- Destination selection
-- Location details
-- Organized building directory
-- Easy access to navigation
+- Search by room name, code, category, or floor
+- Filter by department, facilities, or wing
+- Location details with nearby landmarks and facility tags
+- Direct navigation trigger
 
-### Basic Flow
+### Flow
 
 ```text
-Search
-  ↓
-Select Location
-  ↓
-View Details
-  ↓
+Search / Directory
+       ↓
+Select Room
+       ↓
+Location Detail Screen
+       ↓
 Start Navigation
+   ├── Visual Guidance
+   └── AR Navigation
 ```
-
----
-
-## 🏢 3. Building Directory
-
-The Building Directory provides a structured view of locations available inside the supported building.
-
-Users can browse available locations and select a destination for further information or navigation.
 
 ---
 
 ## 🚨 4. Emergency Guidance
 
-ANVAY includes a dedicated Emergency Guidance module.
+ANVAY includes a verified Emergency Guidance module.
 
 ### Features
 
-- Access emergency guidance from the application.
-- One-touch emergency hotlines (Campus Security, Medical/First Aid, Fire, Department Desk, Ambulance 108).
+- Clearly visible one-touch emergency hotlines:
+  - **101** (Fire Brigade)
+  - **108** (Medical / Ambulance)
+  - Campus Security
+  - First Aid Center
+  - Department Emergency Desk
 - Display building safety and evacuation instructions.
-- Provide building navigation guidance via verified staircases (S1, S2, S3) across Ground, 1st, and 2nd floors.
-- Support route changes when a particular path becomes unavailable.
-
-### Emergency Flow
-
-```text
-Emergency Activated
-        ↓
-Display Emergency Instructions
-        ↓
-Show Emergency Contacts
-        ↓
-Allow One-Touch Calling
-        ↓
-Provide Available Building Navigation Guidance
-        ↓
-Guide User Through Verified Building Paths / Staircases
-```
+- Building navigation guidance via verified staircases (S1, S2, S3) down to Ground Floor.
+- Strictly no fabricated emergency exits or non-existent assembly areas.
 
 ---
 
 ## 🔔 5. Alerts & Notices
 
-The application provides an Alerts & Notices section for important building-related information.
-
-### Examples
-
-- Important announcements
-- Building alerts
-- Safety information
-- Other notices
-
-Users can access these alerts directly from the application.
+The application provides an Alerts & Notices section for important building-related announcements, schedule updates, and safety notices.
 
 ---
 
-## 👤 6. User Authentication
+## 👤 6. User Authentication & Guest Access
 
-ANVAY provides authentication and user access functionality.
-
-### Features
-
-- Login
-- Sign Up
-- Guest access
-- User profile
-- Local session management
-
-The application maintains local user-session and preference information to support the application experience.
+- Login with credentials
+- Student / Faculty Sign Up
+- One-tap Guest Mode for instant access
+- Profile management with departmental role info
 
 ---
 
 ## 🏠 7. Home Dashboard
 
-The Home Dashboard acts as the central entry point to the application's major functionality.
-
-Users can access:
-
-- Building Directory
-- Search
+Central hub offering quick access to:
+- Building Directory & Search
+- Active campus alerts banner
 - Emergency Guidance
-- Alerts & Notices
-- Profile
-- Other available application modules
+- Timetable & schedules
+- Profile & settings
 
 ---
 
-## 👤 8. User Profile
+## 🗓️ 8. Timetable
 
-The Profile section provides access to user-related information.
-
-Users can view their profile information from within the application.
+Dedicated timetable viewer for class schedules and lab sessions across departments.
 
 ---
 
-## 🗓️ 9. Timetable
+## 🔐 9. Admin Module
 
-ANVAY includes a timetable module for displaying scheduled information.
-
-The module provides users with access to timetable-related information through the application interface.
-
----
-
-## 🔐 10. Admin Module
-
-ANVAY includes administrative functionality for managing application information.
-
-### Admin Features
-
-- Manage Rooms
-- Manage Routes
-- Manage Alerts
-- Manage Emergency Information
-
-Administrative functionality is separated from the standard user experience.
-
----
-
-## 🛣️ 11. Dynamic Route Handling
-
-ANVAY supports route changes when a particular route becomes unavailable.
-
-### Concept
-
-```text
-Current Route
-     ↓
-Route Unavailable
-     ↓
-Identify Alternative Route
-     ↓
-Update Guidance
-     ↓
-Continue Navigation
-```
-
-This allows the navigation experience to adapt to route availability.
-
----
-
-## 📱 12. Android Application Interface
-
-The application provides dedicated screens for different functions of the system.
-
-Major screens include:
-
-- Startup
-- Login
-- Sign Up
-- Home Dashboard
-- Building Directory
-- Search
-- Location Details
-- Emergency Guidance
-- Alerts & Notices
-- Timetable
-- Profile
-- Admin Dashboard
-
----
-
-## 🧩 13. Modular Application Architecture
-
-The application is organized into separate components for better maintainability.
-
-### Main Components
-
-```text
-UI
-│
-├── Activities
-├── Fragments
-├── Adapters
-└── Dialogs
-
-Data
-│
-├── Repositories
-├── Authentication
-├── Preferences
-└── Application Data
-
-Models
-│
-├── Locations
-├── Alerts
-├── Emergency Information
-├── Timetable
-└── User Profile
-```
-
----
-
-## 🏫 14. Educational Building Focus
-
-The current implementation is designed around the:
-
-**Computer/IT Building  
-Government Polytechnic Pune**
-
-The architecture allows the project to be extended to additional buildings and floors in the future.
-
----
-
-## 🔮 15. Planned Future Features
-
-Potential future enhancements include:
-
-- AR-based indoor navigation
-- Real-time location tracking
-- Additional buildings and floors
-- Advanced emergency routing
-- Accessibility-focused navigation
-- Real-time building alerts
-- Additional campus facilities
+Administrative management tools for authorized campus staff:
+- Manage Rooms & Facilities
+- Manage Navigation Routes & Blockages
+- Manage Building Alerts
+- Manage Emergency Contacts
 
 ---
 
@@ -272,14 +157,12 @@ Potential future enhancements include:
 
 | Feature | Description |
 |---------|-------------|
-| Indoor Navigation | Navigate within supported building areas |
-| Location Search | Find rooms and facilities |
-| Building Directory | Browse available building locations |
-| Emergency Guidance | Access emergency navigation and safety information |
-| Alerts & Notices | View important building information |
-| Authentication | Login, Sign Up and Guest access |
-| User Profile | Access user information |
-| Timetable | View scheduled information |
-| Admin Module | Manage rooms, routes, alerts and emergency information |
-| Dynamic Routes | Handle unavailable routes |
-| Multi-Floor Support | Navigate supported floors |
+| Indoor Navigation | Turn-by-turn routing using BFS PathFinder |
+| Photo-Grounded Guidance | Visual landmarks using 80 real building photos |
+| AR Navigation | Camera overlay directions using active route |
+| Staircase Floor Transitions | Vertical navigation via S1, S2, S3 |
+| Location Search | Fast room search with category filters |
+| Emergency Guidance | Safety advice and one-touch hotlines (101, 108, Security) |
+| Building Level Visualizer | 3D-style floor perspective strip |
+| Multi-Floor Support | Ground, 1st, and 2nd Floors |
+| Offline Operation | 100% bundled local assets (no internet dependency) |

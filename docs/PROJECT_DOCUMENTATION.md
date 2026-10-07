@@ -1,504 +1,120 @@
-ANVAY — Project Documentation
+# ANVAY — Project Documentation
 
-1. Project Overview
+## 1. Project Overview
 
-ANVAY is an Android-based Smart Indoor Navigation & Emergency Guidance System designed for navigating complex educational buildings.
+ANVAY is an Android-based Smart Indoor Navigation & Emergency Guidance System designed for navigating educational buildings.
 
-The application focuses on the Computer/IT Building of Government Polytechnic Pune and provides users with a centralized platform to discover rooms and facilities, navigate through different floors, access location information, view alerts and notices, and obtain emergency guidance.
+The application focuses on the **Computer/IT Building of Government Polytechnic Pune** and provides users with a centralized platform to discover rooms and facilities, navigate through different floors with photo-grounded visual landmarks and AR guidance, access location details, view alerts and notices, and obtain emergency guidance.
 
-2. Problem Statement
+## 2. Problem Statement
 
-Large educational buildings can contain multiple floors, classrooms, laboratories, offices, and other facilities, making it difficult for students, visitors, and staff to locate specific destinations.
+Large educational buildings contain multiple floors, classrooms, laboratories, offices, and facilities, making it difficult for students, visitors, and staff to locate destinations quickly.
 
-During emergencies, finding an appropriate exit or safety location can become even more challenging.
+Traditional 2D indoor maps often lack intuitive physical context. ANVAY solves this by pairing topological pathfinding with real photographic landmarks captured directly from the physical building, bridging the gap between digital navigation and the physical environment.
 
-ANVAY addresses these challenges by providing a mobile-based indoor navigation and emergency guidance solution for the building.
-
-3. Objectives
+## 3. Objectives
 
 The main objectives of ANVAY are:
 
-Provide an easy-to-use indoor navigation system.
-
-Help users find rooms and facilities within the building.
-
-Provide interactive floor-based navigation.
-
-Display information about available locations.
-
-Provide emergency guidance.
-
-Support route changes when a particular path becomes unavailable.
-
-Display important alerts and notices.
-
-Provide a centralized mobile interface for building navigation.
-
-4. Project Scope
-
-The current implementation focuses on the:
-
-Computer/IT Building
-Government Polytechnic Pune
-
-The application covers:
-
-Ground Floor
-
-First Floor
-
-Second Floor
-
-The system is designed with the possibility of extending navigation to additional buildings and floors.
-
-5. Major Modules
-
-5.1 Authentication Module
-
-The authentication module provides user access to the application.
-
-It includes:
-
-Login
-
-Sign Up
-
-User profile information
-
-Guest access
-
-The application maintains local session and preference information for the user experience.
-
-5.2 Home Dashboard
-
-The Home Dashboard provides access to the major functionalities of ANVAY.
-
-Users can navigate to different sections such as:
-
-Building Directory
-
-Search
-
-Emergency Guidance
-
-Alerts and Notices
-
-Profile
-
-Other available application features
-
-5.3 Building Directory
-
-The Building Directory allows users to explore locations available inside the building.
-
-Users can search for and select destinations such as rooms and facilities.
-
-The directory provides a structured way of accessing building locations.
-
-5.4 Search Module
-
-The Search module allows users to find specific locations within the building.
-
-The general navigation flow is:
-
-Search Location
-      ↓
-Select Destination
-      ↓
-View Location Details
-      ↓
-Navigate to Destination
-
-5.5 Indoor Navigation
-
-ANVAY provides indoor navigation for the supported floors of the Computer/IT Building.
-
-The navigation system helps users move toward their selected destination using the available building routes.
-
-The application also supports route changes when a particular route becomes unavailable.
-
-5.6 Emergency Guidance
-
-The Emergency Guidance module is designed to assist users during emergency situations.
-
-It provides clearly visible one-touch emergency hotlines (Campus Security, Medical/First Aid, Fire, Department Desk, Ambulance 108), safety instructions, and evacuation guidance via verified building paths and vertical staircases (S1, S2, S3) across Ground, 1st, and 2nd floors.
-
-The module makes emergency contacts and safety guidance directly accessible within the building.
-
-5.7 Alerts & Notices
-
-The Alerts & Notices module allows users to view important building-related information.
-
-Examples may include:
-
-Building notices
-
-Important alerts
-
-Safety-related information
-
-Other announcements
-
-5.8 Timetable Module
-
-ANVAY includes a timetable section for displaying scheduled information relevant to the application.
-
-The module provides users with access to timetable-related information through the application interface.
-
-5.9 Admin Module
-
-The application includes administrative functionality for managing application information.
-
-The admin section provides interfaces for managing:
-
-Rooms
-
-Routes
-
-Alerts
-
-Emergency information
-
-Administrative functionality is separated from the regular user experience.
-
-6. Application Flow
-
-The general application flow is:
-
-                    ┌───────────────┐
-                    │    ANVAY      │
-                    │ Startup Page  │
-                    └───────┬───────┘
-                            ↓
-                  ┌───────────────────┐
-                  │ Login / Sign Up / │
-                  │   Guest Access    │
-                  └─────────┬─────────┘
-                            ↓
-                  ┌───────────────────┐
-                  │   Home Dashboard  │
-                  └─────────┬─────────┘
-                            ↓
-          ┌─────────────────┼─────────────────┐
-          ↓                 ↓                 ↓
-     Search /          Building          Emergency
-     Directory          Locations         Guidance
-          │                 │                 │
-          └─────────────────┼─────────────────┘
-                            ↓
-                   Location / Route
-                            ↓
-                    Navigation
-
-7. Technology Stack
-
-Component
-
-Technology
-
-Platform
-
-Android
-
-Programming Language
-
-Java
-
-UI Development
-
-XML
-
-Build System
-
-Gradle
-
-Development Environment
-
-Android Studio / Antigravity IDE
-
-Version Control
-
-Git & GitHub
-
-8. Project Structure
-
-The project follows a modular Android project structure.
-
-Anvay/
-│
-├── app/
-│   └── src/
-│       └── main/
-│           ├── java/
-│           │   └── com/
-│           │       └── gpp/
-│           │           └── anvay/
-│           │               ├── adapter/
-│           │               ├── data/
-│           │               ├── model/
-│           │               └── ui/
-│           │
-│           ├── res/
-│           │   ├── drawable/
-│           │   ├── layout/
-│           │   ├── menu/
-│           │   ├── values/
-│           │   └── xml/
-│           │
-│           └── AndroidManifest.xml
-│
-├── screenshots/
-├── docs/
-│
-├── gradle/
-│
-├── build.gradle.kts
-├── settings.gradle.kts
-├── gradle.properties
-├── gradlew
-├── gradlew.bat
-└── README.md
-
-9. Package Organization
-
-The Java source code is organized into functional packages.
-
-adapter
-
-Contains adapters used to connect application data with different UI components.
-
-Examples include:
-
-Location Adapter
-
-Alert Adapter
-
-Emergency Contact Adapter
-
-Safety Instruction Adapter
-
-Admin-related adapters
-
-data
-
-Contains application data and data-management classes.
-
-Examples include:
-
-Authentication management
-
-Location repository
-
-Alert repository
-
-Emergency repository
-
-Timetable repository
-
-Preference management
-
-model
-
-Contains data models used throughout the application.
-
-Examples include:
-
-Location
-
-Alert
-
-Emergency Contact
-
-Safety Instruction
-
-Timetable
-
-User Profile
-
-ui
-
-Contains the application's activities and user-interface components.
-
-Examples include:
-
-Login
-
-Sign Up
-
-Home
-
-Search
-
-Directory
-
-Location Details
-
-Emergency
-
-Timetable
-
-Profile
-
-Alerts
-
-10. User Experience
-
-ANVAY is designed around a simple navigation flow so that users can reach important functionality without navigating through complicated menus.
-
-The interface provides dedicated access to:
-
-Location discovery
-
-Indoor navigation
-
-Emergency assistance
-
-Alerts
-
-User profile
-
-Building information
-
-11. Emergency Guidance & Navigation Concept
-
-Emergency situations may require users to access safety guidance, contact emergency services, or navigate using verified staircases.
-
-ANVAY provides emergency guidance and supports route navigation using verified building corridors and staircases across Ground, 1st, and 2nd floors.
-
-The emergency guidance concept is:
-
-Emergency Activated
-        ↓
-Display Emergency Instructions
-        ↓
-Show Emergency Contacts
-        ↓
-Allow One-Touch Calling
-        ↓
-Provide Available Building Navigation Guidance
-        ↓
-Guide User Through Verified Building Paths / Staircases
-
-12. Setup & Installation
-
-Prerequisites
-
-The following are required to build and run the project:
-
-Android Studio
-
-JDK
-
-Android SDK
-
-Android device or Android emulator
-
-Git
-
-Clone the Repository
-
-git clone https://github.com/Aditikalbhor/Anvay.git
-
-Navigate into the project:
-
-cd Anvay
-
-Open the Project
-
-Open Android Studio.
-
-Select Open.
-
-Select the cloned ANVAY project.
-
-Allow Gradle to synchronize.
-
-Connect an Android device or start an emulator.
-
-Build and run the application.
-
-13. Testing Environment
-
-The application can be tested using:
-
-Android Emulator
-
-Physical Android Device
-
-Before running the application, ensure that the required Android SDK and JDK versions are configured correctly.
-
-14. Screenshots
-
-Application screenshots are available in the repository's screenshots directory.
-
-The screenshots demonstrate major application screens including:
-
-Startup
-
-Login
-
-Home Dashboard
-
-Building Directory
-
-Emergency Guidance
-
-Alerts & Notices
-
-Profile
-
-Refer to the main README for the visual application showcase.
-
-15. Future Scope
-
-The project can be extended with additional functionality such as:
-
-AR-based indoor navigation
-
-Support for additional buildings and floors
-
-Real-time location tracking
-
-Advanced emergency routing
-
-Accessibility-focused navigation
-
-Real-time building alerts
-
-Additional campus facilities
-
-16. Project Outcome
-
-ANVAY demonstrates the development of an Android-based indoor navigation and emergency guidance application for an educational environment.
-
-The project combines:
-
-Mobile application development
-
-Indoor navigation concepts
-
-Building information management
-
-Emergency guidance
-
-User authentication
-
-Administrative management
-
-Location-based information presentation
-
-17. Developer
-
-Aditi Kalbhor
-
-Computer Engineering Student
-
-GitHub:
-
-https://github.com/Aditikalbhor
-
-18. Repository
-
-GitHub Repository:
-
-https://github.com/Aditikalbhor/Anvay
+1. Provide an intuitive indoor navigation system grounded in real physical photographs.
+2. Maintain `NavigationGraph` as the single source of truth for routing.
+3. Guide users through verified multi-floor staircase transitions (`S1`, `S2`, `S3`).
+4. Support AR camera overlays powered by the same navigation route.
+5. Provide verified emergency guidance with one-touch hotlines (101, 108, Campus Security, Medical).
+6. Provide an interactive 3D-style floor perspective visualizer.
+7. Operate 100% locally and offline without external image hosting dependencies.
+
+## 4. Project Scope & Building Topology
+
+### Building Scope
+- **Building:** Computer/IT Building, Government Polytechnic Pune
+- **Floors:** Ground Floor, 1st Floor, 2nd Floor (Strictly 3 floors; no 3rd floor).
+
+### Staircase Identifiers & Floor Connections
+- **Staircase S1 (East Wing):** `GF-S1 ↔ FF-S1 ↔ SF-S1`
+- **Staircase S2 (Central Lobby):** `GF-S2 ↔ FF-S2 ↔ SF-S2`
+- **Staircase S3 (West Wing):** `GF-S3 ↔ FF-S3 ↔ SF-S3`
+
+### Node Types
+The navigation topology permits only four verified node types:
+- `ROOM_ENTRY`: Entrance doorway to rooms, labs, offices.
+- `CORRIDOR_JUNCTION`: Corridor intersection or waypoint.
+- `STAIRCASE`: Staircase landing connecting floors.
+- `CHECKPOINT`: Physical positioning reference.
+
+*(Strictly no fabricated `EXIT` or `EMERGENCY_EXIT` nodes).*
+
+## 5. Major Modules
+
+### 5.1 Photo-Grounded Visual Navigation Module
+- **Dataset:** 80 high-resolution photos bundled locally in `drawable-nodpi/`.
+- **`VisualLandmark`:** Represents verified physical landmarks with controlled types (`ROOM_ENTRANCE`, `CORRIDOR_VIEW`, `STAIRCASE_VIEW`, `STAIRCASE_LANDING`, `JUNCTION_VIEW`, `FLOOR_TRANSITION`, `DESTINATION_VIEW`).
+- **`VisualNavigationRepository`:** Maps topological nodes and staircase transitions to photograph resources.
+- **`VisualNavigationManager`:** Consumes `NavigationRoute` from the BFS `PathFinder`, resolves visual landmarks, determines directional cues, and tracks step progression without mutating the graph.
+- **`VisualNavigationActivity`:** Presents visual navigation with real building photos, floor badges, step progress, 3D floor indicator, floor transition alerts, and manual step controls.
+
+### 5.2 AR Navigation Module
+- Utilizes `ARNavigationActivity` and `AROverlayView`.
+- Consumes the exact same `NavigationRoute` as standard and visual navigation.
+- Live camera preview with AR directional arrows (Forward, Left, Right, Staircase, Arrival).
+
+### 5.3 Indoor Navigation (Topological)
+- Standard turn-by-turn guidance with `NavigationActivity`.
+- BFS pathfinding calculated across `NavigationGraph`.
+- Multi-floor route support and dynamic recalculation.
+
+### 5.4 Location Discovery & Building Directory
+- Search rooms by name, number, department, wing, or category.
+- Comprehensive room details (In-charge, operating hours, facilities, nearest staircases).
+
+### 5.5 Emergency Guidance Module
+- One-touch emergency calling:
+  - **101** (Fire Brigade)
+  - **108** (Ambulance / Medical)
+  - Campus Security Office
+  - Medical / First Aid Room
+  - Department Emergency Contact
+- Safety instructions and staircase descent guidance.
+
+### 5.6 Admin & Management Module
+- Manage rooms, routes, alerts, and emergency information.
+
+## 6. Architecture & Data Flow
+
+```text
+Building
+  ↓
+Floor
+  ↓
+NavigationNode
+  ↓
+NavigationGraph (Single Source of Truth)
+  ↓
+PathFinder (BFS Algorithm)
+  ↓
+NavigationRoute
+  ↓
+NavigationManager
+  ├── Normal Navigation (NavigationActivity)
+  ├── Visual Navigation (VisualNavigationActivity)
+  │     └── VisualNavigationManager + VisualNavigationRepository (80 Photos)
+  └── AR Navigation (ARNavigationActivity)
+```
+
+## 7. Positioning & Limitations
+
+- **Positioning Architecture:** Provider-independent (`IndoorPositionProvider`, `UserPositionManager`).
+- **Academic Demo Limitation:** For testing and evaluation, navigation uses manual/mock step progression (`Next Step`, `Previous Step`, `Restart`, or selecting a starting anchor). Real-time indoor GPS, BLE beacons, Wi-Fi fingerprinting, and automated camera localization are not claimed.
+
+## 8. Technology Stack
+
+- **Language:** Java 17
+- **Platform:** Android (API 31+ target, min API 24)
+- **UI:** XML with Material Design Components
+- **Build System:** Gradle
+
+## 9. Verification & Quality Assurance
+
+- All unit tests pass (`.\gradlew testDebugUnitTest`).
+- Full Java compilation succeeds (`.\gradlew compileDebugJavaWithJavac`).
+- Debug APK successfully assembled (`.\gradlew assembleDebug` -> `app-debug.apk` ~14.5 MB).

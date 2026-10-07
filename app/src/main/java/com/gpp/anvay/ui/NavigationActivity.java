@@ -54,6 +54,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationM
     private TextView tvActiveStepInstruction;
     private MaterialButton btnPrevStep;
     private MaterialButton btnNextStep;
+    private MaterialButton btnLaunchVisualGuidance;
     private MaterialButton btnLaunchAR;
     private MaterialButton btnRecalculate;
     private MaterialButton btnCancel;
@@ -122,6 +123,7 @@ public class NavigationActivity extends AppCompatActivity implements NavigationM
         tvActiveStepInstruction = findViewById(R.id.tvActiveStepInstruction);
         btnPrevStep = findViewById(R.id.btnNavPrevStep);
         btnNextStep = findViewById(R.id.btnNavNextStep);
+        btnLaunchVisualGuidance = findViewById(R.id.btnLaunchVisualGuidance);
         btnLaunchAR = findViewById(R.id.btnLaunchAR);
         btnRecalculate = findViewById(R.id.btnNavRecalculate);
         btnCancel = findViewById(R.id.btnNavCancel);
@@ -195,6 +197,19 @@ public class NavigationActivity extends AppCompatActivity implements NavigationM
             @Override
             public void onClick(View v) {
                 showLocationPickerDialog();
+            }
+        });
+
+        btnLaunchVisualGuidance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent visualIntent = new Intent(NavigationActivity.this, VisualNavigationActivity.class);
+                visualIntent.putExtra("destination_id", destinationId);
+                visualIntent.putExtra("start_id", startId);
+                if (destinationItem != null) {
+                    visualIntent.putExtra("location_item", destinationItem);
+                }
+                startActivity(visualIntent);
             }
         });
 
