@@ -78,13 +78,6 @@
             android:parentActivityName=".ui.NavigationActivity"
             android:screenOrientation="portrait" />
 
-        <!-- Photo-Grounded Visual Navigation Screen -->
-        <activity
-            android:name=".ui.VisualNavigationActivity"
-            android:exported="false"
-            android:parentActivityName=".ui.NavigationActivity"
-            android:screenOrientation="portrait" />
-
         <!-- Emergency Mode Screen -->
         <activity
             android:name=".ui.EmergencyActivity"
