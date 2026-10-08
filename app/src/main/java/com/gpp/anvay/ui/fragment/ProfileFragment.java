@@ -323,9 +323,8 @@ public class ProfileFragment extends Fragment {
                         "• Real-time Alerts & Bulletins\n" +
                         "• Protected Admin Management Portal\n\n" +
                         "Upcoming in Phase 2:\n" +
-                        "• 2D/3D Multi-floor CAD Maps\n" +
-                        "• Turn-by-turn Indoor Pathfinding\n" +
-                        "• AR Live Camera Waypoint Guidance\n\n" +
+                        "• Advanced Beacon & Sensor Localization\n" +
+                        "• Real-time Congestion Analytics\n\n" +
                         "Government Polytechnic Pune © 2026")
                 .setPositiveButton("OK", null)
                 .show();

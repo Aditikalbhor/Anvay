@@ -67,7 +67,7 @@
             android:drawableStart="@drawable/ic_check_circle"
             android:drawablePadding="8dp"
             android:drawableTint="@color/secondary"
-            android:text="2D &amp; 3D interactive multi-floor maps"
+            android:text="Multi-floor topological staircase guidance"
             android:textColor="@color/text_primary"
             android:textSize="13sp" />
 

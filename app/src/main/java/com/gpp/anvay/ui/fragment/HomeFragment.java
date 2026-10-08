@@ -103,21 +103,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // 2. Floor Maps Button (Placeholder)
-        MaterialCardView cardFloorMaps = view.findViewById(R.id.cardFloorMaps);
-        cardFloorMaps.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FeaturePlaceholderDialog.show(
-                        requireContext(),
-                        "Interactive Floor Maps (Phase 2)",
-                        "Multi-floor 2D and 3D building layouts with room-level zoom and spatial layers will be available in Phase 2.",
-                        R.drawable.ic_floor_map
-                );
-            }
-        });
-
-        // 3. Building Directory Button
+        // 2. Building Directory Button
         MaterialCardView cardDirectory = view.findViewById(R.id.cardBuildingDirectory);
         cardDirectory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,7 +114,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // 4. Search Locations Button
+        // 3. Search Locations Button
         MaterialCardView cardSearch = view.findViewById(R.id.cardSearchLocations);
         cardSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,7 +125,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        // 5. Class Timetable & Schedules Button
+        // 4. Class Timetable & Schedules Button
         MaterialCardView cardTimetable = view.findViewById(R.id.cardHomeTimetable);
         if (cardTimetable != null) {
             cardTimetable.setOnClickListener(new View.OnClickListener() {

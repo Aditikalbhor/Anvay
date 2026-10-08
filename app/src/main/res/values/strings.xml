@@ -17,8 +17,6 @@
     <string name="quick_actions">Quick Actions</string>
     <string name="btn_indoor_navigation">Indoor Navigation</string>
     <string name="btn_indoor_navigation_desc">Find real-time turn-by-turn routes</string>
-    <string name="btn_floor_maps">Floor Maps</string>
-    <string name="btn_floor_maps_desc">Explore 2D/3D building layouts</string>
     <string name="btn_emergency_mode">Emergency Mode</string>
     <string name="btn_emergency_mode_desc">Safety guidance &amp; emergency hotlines</string>
     <string name="btn_building_directory">Building Directory</string>
@@ -117,7 +115,7 @@
     <string name="edit">Edit</string>
 
     <!-- Placeholders -->
-    <string name="phase2_navigation_notice">Indoor Navigation, Floor Maps, and AR Route calculation will be enabled in Phase 2 after spatial survey and building layout calibration.</string>
+    <string name="phase2_navigation_notice">Advanced spatial survey and automated beacon calibration will be enabled in Phase 2.</string>
     <string name="understood">Understood</string>
 
     <!-- Sign Up & Auth Strings -->

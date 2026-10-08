@@ -21,7 +21,7 @@ The objective of ANVAY is to provide a simple and accessible mobile solution for
 
 * 🔐 User authentication
 * 🔎 Search for rooms and locations
-* 🗺️ Interactive floor maps
+* 🏢 Multi-floor building directory & topology
 * 📍 Indoor navigation
 * 🧭 Dynamic route guidance
 * 🚨 Emergency guidance
@@ -49,17 +49,17 @@ The current implementation focuses on the **Computer/IT Building of Government P
 ```text
 Login / Guest Access
         ↓
-Home Dashboard
+Home Dashboard / Search / Directory
         ↓
-Search Location
+Select Location
         ↓
-Select Destination
+Location Details
         ↓
-View Floor Map
+Navigate
         ↓
-Indoor Navigation
+Normal NavigationActivity
         ↓
-Emergency Guidance
+Optional AR Navigation
 ```
 
 ## 🚨 Emergency Guidance
